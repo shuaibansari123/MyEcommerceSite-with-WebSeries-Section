@@ -1,0 +1,124 @@
+{% extends 'shop/basic.html' %}
+{% block title%} Checkout - My Awesome Cart{% endblock %}
+
+{% block ul %}
+
+<li class="nav-item active m-auto">
+    <a class="nav-link ml-2 mr-2" href="/shop" style="margin:auto; color#dc0a7f; font-family:var(--font-1);font-weight:900;  border-radius:5px;  padding-left:5px; padding-right:5px;  width:fit-content; text-align:center;  margin-bottom:15px; margin-left:39%!important; color:#dc0a7f ; ">Home</a>
+  </li>
+
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/about" style="margin:auto; color: #dc0a7f ;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin:auto;  text-align:center; color:#dc0a7f ; margin-left:41%;">About</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/tracker" style="margin:auto; color: black;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px; margin-left:25px; margin-right:25px;  width:fit-content; margin-left:41%; color:#dc0a7f ;">Tracker</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/blog" style=" margin:auto; color:black;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin-left:42%; color:#dc0a7f ;">Blog</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/contact" style="margin:auto; color: black; font-family:var(--font-1); font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin-left:41%; color:#dc0a7f ;">Contact </a>
+  </li>
+
+  {% endblock %}
+
+
+
+
+{% block body %}
+<div class="container">
+    <div class="col my-4">
+        <h2 style="font-family:var(--font-1); font-weight:800;  color:rgb(254 4 73);">Step 1 - My Awesome Cart Express Checkout - Review Your Cart Items</h2>
+        <div class="my-4">
+            <ul class="list-group" id="items">
+            </ul>
+        </div>
+    </div>
+    <div class="col my-4">
+        <h2 style="font-family:var(--font-1); font-weight:800;  color:rgb(254 4 73);" >Step 2 - Enter Address & Other Details:</h2>
+        <form method="post" action="/shop/checkout/">{% csrf_token %}
+            <input type="hidden" name="itemsJson" id="itemsJson">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputname" style="font-weight:600; font-family:var(--font-1);  color:#b7052d;">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" style="background-color: #fdf6f8;background-clip: padding-box;border: 1px solid #fac7d4;">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4" style="font-weight:600; font-family:var(--font-1);  color:#b7052d;">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" style="background-color: #fdf6f8;background-clip: padding-box;border: 1px solid #fac7d4;"  placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress" style="font-weight:600; font-family:var(--font-1); color:#b7052d; ">Address</label>
+                <input type="text" style="background-color: #fdf6f8;background-clip: padding-box;border: 1px solid #fac7d4;" class="form-control" id="address1" name="address1" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2" style="font-weight:600; font-family:var(--font-1);  color:#b7052d; ">Address line 2</label>
+                <input type="text" style="background-color: #fdf6f8;background-clip: padding-box;border: 1px solid #fac7d4;"  class="form-control" id="address2" name="address2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity" style="font-weight:600; font-family:var(--font-1); color:#b7052d; ">City</label>
+                    <input type="text"  style="background-color: #fdf6f8;background-clip: padding-box;border: 1px solid #fac7d4;" class="form-control" id="city" placeholder="Delhi , Mumbai etc." name="city">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState" style="font-weight:600; font-family:var(--font-1);  color:#b7052d;  ">State</label>
+                    <input type="text"  style="background-color: #fdf6f8;background-clip: padding-box;border: 1px solid #fac7d4;" class="form-control" id="state" name="state"  placeholder="Enter State">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip" style="font-weight:600; font-family:var(--font-1);   color:#b7052d; ">Zip</label>
+                    <input type="text" style="background-color: #fdf6f8;background-clip: padding-box;border: 1px solid #fac7d4;"  class="form-control" id="zip_code" placeholder="110059 " name="zip_code">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputZip" style="font-weight:600; font-family:var(--font-1); color:#b7052d;  ">Phone Number</label>
+                <input type="tel" style="background-color: #fdf6f8;background-clip: padding-box;border: 1px solid #fac7d4;"class="form-control" id="phone" placeholder="Enter Phone Number"  name="phone">
+            </div>
+            <button type="submit" class="btn btn-primary" style="background-color: #ec024d; border:2px solid #ec024d; font-weight:600; font-family:var(--font-1);">Place Order</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+if (localStorage.getItem('cart') == null) {
+    var cart = {};
+} else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+}
+console.log(cart);
+var sum = 0;
+if ($.isEmptyObject(cart)) {
+    //if object is empty
+    mystr = `<p style="color: rgb(254 4 73); font-family:var(--font-1);" >Your cart is empty, please add some items to your cart before checking out!</p>`
+    $('#items').append(mystr);
+} else {
+    for (item in cart) {
+        let name = cart[item][1];
+        let qty = cart[item][0];
+        sum = sum + qty;
+        mystr = `<li class="list-group-item d-flex justify-content-between align-items-center" style=" font-family:var(--font-1); color: white; background-color: #e81444; border: 3px solid pink; FONT-WEIGHT:700; ">
+                    ${name}
+                    <span class="badge badge-primary badge-pill" style="background-color: white;
+    font-family: var(--font-1);
+    color: red;">${qty}</span>
+                </li>`
+        $('#items').append(mystr);
+    }
+}
+document.getElementById('cart').innerHTML = sum;
+
+$('#itemsJson').val(JSON.stringify(cart));
+{% if thank %}
+alert('Thanks for ordering with us. Your order is is {{id}}. Use it to track your order using our order tracker');
+localStorage.clear();
+document.location = "/shop";
+
+
+{% endif %}
+</script>
+{% endblock %}

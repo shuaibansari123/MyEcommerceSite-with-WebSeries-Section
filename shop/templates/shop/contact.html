@@ -1,0 +1,63 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Contact Us {% endblock %}
+
+
+{% block ul %}
+
+<li class="nav-item active">
+  <a class="nav-link ml-2 mr-2" href="/shop" style="color:var(--pink); font-family: 1.8em;  font-family:var(--font-1);font-weight:1000;">Home <span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link ml-2 mr-2" href="/shop/about" style="color:var(--pink);  font-family:var(--font-1); font-weight:900;">About Us</a>
+</li>
+
+<li class="nav-item ml-2 mr-2">
+  <a class="nav-link" href="/shop/tracker" style="color:var(--pink);  font-family:var(--font-1);font-weight:800;">Tracker</a>
+</li>
+
+<li class="nav-item ml-2 mr-2">
+  <a class="nav-link" href="/blog" style="color:var(--pink);  font-family:var(--font-1);font-weight:800;">Blog</a>
+</li>
+
+<li class="nav-item ml-2 mr-2">
+  <a class="nav-link" href="/shop/contact" style="color:var(--pink); font-family:var(--font-1); font-weight:800;  background-color: var(--pink); border-radius:5px; padding-left:5px; padding-right:5px;  color:rgb(250, 240, 181); border-radius:5px; padding-left:5px; padding-right:5px; ">Contact Us</a>
+</li>
+
+
+  {% endblock %}
+
+{% block body %}
+ <div class="container my-3">
+     <h3>Contact Us</h3>
+     <form action="/shop/contact/" method="post">{% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+  </div>
+          <div class="form-group">
+    <label for="name">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+  </div>
+          <div class="form-group">
+    <label for="name">Phone</label>
+    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+  </div>
+          <div class="form-group">
+   <div class="form-group">
+    <label for="desc">How May We Help You ?</label>
+    <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+
+  {% endblock %}
+  {% block js%}
+  
+  {% if thank %}
+  <script>
+  alert("Thanks for Contacting with us. we will touch as soon as possible...")
+   localStorage.clear();
+  document.location="/shop/";
+
+</script>
+  {% endif %}
+  {% endblock %}

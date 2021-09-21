@@ -1,0 +1,589 @@
+
+
+
+{% extends 'shop/basic.html' %}
+{% load static %}
+{% block css %}
+<style>
+
+
+
+
+
+.col-md-3
+{
+display: inline-block;
+margin-left:-22px;
+}
+.carousel-indicators .active {
+background-color: blue;
+}
+.col-md-3 img{
+  margin-top:5px;
+width: 32S0px;
+height: 250px;
+
+}
+.carousel-indicators li{
+background-color: green;
+}
+body .carousel-indicators{
+bottom: -40px;
+}
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon{
+background-color: rgb(54 56 54);
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+top: auto;
+bottom: auto;
+padding-top: 222px;
+padding:0;
+margin:0;
+}
+.carousel-control-prev{margin-left:-25px;}
+body .no-padding{
+padding-left: 0;
+padding-right: 0;
+}
+
+
+
+
+
+/* fade slider */
+.slides {
+    height:300px;
+    margin:50px auto;
+    overflow:hidden;
+    position:relative;
+    width:900px;
+}
+.slides ul {
+    list-style:none;
+    position:relative;
+}
+/* keyframes #anim_slides */
+@-webkit-keyframes anim_slides {
+    0% {
+        opacity:0;
+    }
+    6% {
+        opacity:1;
+    }
+    24% {
+        opacity:1;
+    }
+    30% {
+        opacity:0;
+    }
+    100% {
+        opacity:0;
+    }
+}
+@-moz-keyframes anim_slides {
+    0% {
+        opacity:0;
+    }
+    6% {
+        opacity:1;
+    }
+    24% {
+        opacity:1;
+    }
+    30% {
+        opacity:0;
+    }
+    100% {
+        opacity:0;
+    }
+}
+.slides ul li {
+    opacity:0;
+    position:absolute;
+    top:0;
+    /* css3 animation */
+    -webkit-animation-name: anim_slides;
+    -webkit-animation-duration: 25.0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-delay: 0;
+    -webkit-animation-play-state: running;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-name: anim_slides;
+    -moz-animation-duration: 5.0s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-direction: normal;
+    -moz-animation-delay: 0;
+    -moz-animation-play-state: running;
+    -moz-animation-fill-mode: forwards;
+}
+/* css3 delays */
+.slides ul  li:nth-child(2), .slides ul  li:nth-child(2) div {
+    -webkit-animation-delay: 4.0s;
+    -moz-animation-delay: 4.0s;
+}
+.slides ul  li:nth-child(3), .slides ul  li:nth-child(3) div {
+    -webkit-animation-delay: 8.0s;
+    -moz-animation-delay: 8.0s;
+}
+.slides ul  li:nth-child(4), .slides ul  li:nth-child(4) div {
+    -webkit-animation-delay: 12.0s;
+    -moz-animation-delay: 12.0s;
+}
+.slides ul li img {
+    display:block;
+}
+/* keyframes #anim_titles */
+@-webkit-keyframes anim_titles {
+    0% {
+        left:100%;
+        opacity:0;
+    }
+    5% {
+        left:10%;
+        opacity:1;
+    }
+    20% {
+        left:10%;
+        opacity:1;
+    }
+    25% {
+        left:100%;
+        opacity:0;
+        COLOR:rgb(146, 197, 5);
+        BACKGROUND-COLOR:rgb(1, 65, 1);
+        FONT-SIZE:1.5EM;
+    }
+    100% {
+        left:100%;
+        opacity:0;
+    }
+}
+@-moz-keyframes anim_titles {
+    0% {
+        left:100%;
+        opacity:0;
+    }
+    5% {
+        left:10%;
+        opacity:1;
+    }
+    20% {
+        left:10%;
+        opacity:1;
+    }
+    25% {
+        left:100%;
+        opacity:0;
+    }
+    100% {
+        left:100%;
+        opacity:0;
+    }
+}
+.slides ul li div {
+    background-color:#000000;
+    border-radius:10px 10px 10px 10px;
+    box-shadow:0 0 5px #FFFFFF inset;
+    color:#FFFFFF;
+    font-size:26px;
+    left:10%;
+    margin:0 auto;
+    padding:20px;
+    position:absolute;
+    top:50%;
+    width:200px;
+    /* css3 animation */
+    -webkit-animation-name: anim_titles;
+    -webkit-animation-duration: 16.0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-delay: 0;
+    -webkit-animation-play-state: running;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-name: anim_titles;
+    -moz-animation-duration: 16.0s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-direction: normal;
+    -moz-animation-delay: 0;
+    -moz-animation-play-state: running;
+    -moz-animation-fill-mode: forwards;
+}
+
+.megamenu {
+  position: static;
+}
+
+.megamenu .dropdown-menu {
+  background: none;
+  border: none;
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .product-card {
+    flex: 1 46%;
+  }
+
+
+  #typed{font-size:1.2em; color:black;}
+}
+
+
+
+
+body {
+    background-attachment:fixed;
+  min-height: 100vh;
+}
+
+code {
+  color: #745eb1;
+  background: #fff;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+}
+
+.text-uppercase {
+  letter-spacing: 0.08em;
+}
+.popover-body {
+
+   color: #eb0d5f;
+    margin-left: 2px;
+    background-color: white;
+    border: 2.5px solid #f6aec9;
+    font-family:var(--font-1);
+    font-weight:600;
+}
+
+
+
+@media only screen and (max-width:650px){
+#fullimage{width:140%; margin-right:3px; margin-left:-3px;}
+
+#fullcart{width:490px; height: 520px; border:10px solid black; }
+#fullcarparent{width:670px; height: 450px; border:30px solid rgb(241, 2, 2);}
+.col-md-3
+{
+display: inline-block;
+margin-left:auto;
+margin-right:auto;
+}
+.popover-body {
+   color: #eb0d5f;
+    margin-left: 2px;
+    background-color: white;
+    border: 2.5px solid #f6aec9;
+    font-family:var(--font-1);
+    font-weight:600;
+}
+#b__box{ background-color:black;width:23.23rem;}
+
+
+}
+.qv:hover{color:white; font-weight:900; }
+
+.ac:hover{color:white;  font-weight:900; }
+
+
+.carousel11{padding:5px;}
+
+</style>
+{% endblock %}
+
+
+{% block ul %}
+
+<li class="nav-item active m-auto">
+    <a class="nav-link ml-2 mr-2" href="/shop" style="margin:auto; color#dc0a7f; font-family:var(--font-1);font-weight:900;  border-radius:5px;  padding-left:5px; padding-right:5px;  width:fit-content; text-align:center; background-image: linear-gradient(to bottom right ,rgb(249 4 54) , rgb(249 4 54)); margin-bottom:15px; margin-left:39%!important; color:white ;  box-shadow: 0 0 8px 0px rgb(249 4 54); ">Home</a>
+  </li>
+
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/about" style="margin:auto; color:rgb(249 4 54) ;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin:auto;  text-align:center; color:rgb(249 4 54) ; margin-left:41%;">About</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/tracker" style="margin:auto; color: black;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px; margin-left:25px; margin-right:25px;  width:fit-content; margin-left:41%; color:rgb(249 4 54) ;">Tracker</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/blog" style=" margin:auto; color:black;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin-left:42%; color:rgb(249 4 54) ;">Blog</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/contact" style="margin:auto; color: black; font-family:var(--font-1); font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin-left:41%; color:rgb(249 4 54) ;">Contact </a>
+  </li>
+
+  {% endblock %}
+
+
+
+
+
+{% block body %}
+
+
+
+<!-- For demo purpose-->
+<section class="py-5 text-white" style="height:100vh; margin-bottom:20px;    padding-top:50px; background-image: url('{% static 'shop/pink7.jpg' %}');background-size:cover;background-attachment:fixed; ">
+  <form>
+    <div class="container py-4">
+      <div class="row"  style="margin:Auto; width:100%;">
+
+
+        <div class="col-lg-8 mx-auto text-center">
+          <h1 class="jumbotron-heading">
+              <span id="typed"   style="font-size:1.11em; text-shadow:1px -10px 10px #bd416b; font-family: var(--font-1); color:#b72831 ; font-style:bold;font-weight: 600; font-family:var(--font-1) ; "></span></h1>
+
+          <input type="text" id="search1" name="search1" column="4" row="4" class="mt-4" placeholder="Search items " style=" background-color:#f9d9ea;  width:95%; border-radius: 6.5px; height: 50px;  border:2.5px solid white; font-family: var(--font-1); font-weight:800;"><br>
+     <a href='/shop/search'>
+          <button type="submit" class="row" name="submit1" id="submit1" style="     background-image: linear-gradient(to bottom right , rgb(247 89 121),white, white, rgb(247 89 121)); font-wight:700; font-size:1.5em;font-family: comicsansms; color:red; border:1px solid red; width:auto; height: auto ;margin-top:8px;  padding:2px 28px;  margin:auto; font-size:1.9em; border-radius: 6px;  margin-bottom:2px;  margin-top:15px;font-family:var(--font-1) ;">Search</button></a>
+        </div>
+
+
+
+
+
+      </div>
+     <div style="display:flex; "></div>
+    </div>
+      </form>
+  </section>
+
+
+
+ <div
+        style="display:flex; font-size:1em; height:35px; font-weight: 700;  align-items: center;
+         font-family:var(--font-1); text-align:center; justify-content: center;
+         margin-top: 4.1vh; color:white; background-image: linear-gradient(to right  , rgb(248, 7, 139),rgb(245, 7, 98),  rgb(236, 236, 69) ,rgb(255, 8, 82),rgb(245, 3, 124));">
+        FREE SHIPING on purchase above Rs 499
+    </div>
+
+
+
+    <!--Slideshow starts here -->
+
+
+    {% for product, range, nSlides in allProds %}
+    <h4 class="my-4" style="color: #f70981 ;margin-left:2%;font-size:1.5em;font-family:var(--font-1);font-weight:700;  ">Flash Sale On<span style="color:white; font-size:2rem; margin:10px;background-color: #f70981;padding:5px;border-radius:7px;""> {{product.0.category.capitalize}} </span>- Recommended Items</h4>
+    <div class="row" data-aos="flip-right">
+        <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
+                {% for i in range %}
+                <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
+                {% endfor %}
+            </ul>
+            <div class="container carousel-inner no-padding">
+                <div class="carousel-item active" style="width:110%;">
+                    {% for i in product %}
+                    <div class="col-xs-3 col-sm-3 col-md-3" style="width:119%; " >
+                        <div class="card align-items-center my-3"  id="b__box" style=" width:20.945rem; margin-left:0px; padding:0px;  border:1px solid rgb(244 142 186);  background-color:#fafcfd;">
+                            <img src='/media/{{i.image}}' class="card-img-top my-0 mx-0" style="width:100%;  margin-right:0; padding:0; margin-left:0px;  border-radius:5px 5px 0 0 ; " alt="...">
+                            <div class="card-body">
+
+                <Div style="display:flex; flex-direction:row; justify-content: space-around;  ">
+                        <img src="{% static 'shop/star-rating-png.png' %}"  class="card-img-top mx-0" style="margin-bottom: 5px;  margin-top:-3.5px; height: 25px; width:62%; border-radius:5px; margin-left:auto; margin-right:auto; text-align:center; alt="...">
+</Div>
+ <Div style="display:flex; flex-direction:row; justify-content: space-around;  ">
+                        <h6 class="card-title" style="color:rgb(150 147 147) ; align-self:flex-end;  margin-bottom: 0.4rem;    align-self:flex-end; margin-right:18px; margin-left:10px;" >
+
+                    <span  style="font-size:1.5em; font-weight:650; color:rgb(185 145 34); font-family:var(--font-1); font-weight:800; margin-top:-2px;margin-bottom: 4px; margin-left:5px; ">
+                      <!--       <span   style="font-size:0.7em; font-weight:500;  margin-left:-4px; color:rgb(245 183 10); padding-left:7px; margin-right:0px;"  >Rs.</span>-->
+                         <span    id="pricepr{{i.id}}" style="font-size:1em; font-weight:650; color:#fd5a6c; font-family:var(--font-1); font-weight:800; margin-top:-2px;margin-bottom: 4px; margin-right:1px; ">{{i.price}}</span>
+                    </span>
+
+                        </h6>
+                </Div>
+
+
+
+                                <h5 class="card-title" id="namepr{{i.id}}" style="color:#fd5a6c; font-weight: 680 ; font-size:1.35em; font-family:var(--font-1); font-weight:700; text-align:center; margin-bottom:15px;">{{i.product_name.capitalize}}</h5>
+                              <!--  <p class="card-text" style="color:rgb(185 145 34);  text-align:center; margin-bottom:6px; font-family:var(--font-1); font-weight:700;  ">{{i.desc|slice:"0:33"}}...</p>-->
+                               <!--<h6 class="card-title" style="color:rgb(245, 6, 117) ; margin-bottom: 0.4rem;" >Price : <span id="pricepr{{i.id}}" style="font-size:1.5em; font-weight:650; color:rgb(245, 6, 117); margin-top:-2px; margin-bottom: 4px;">{{i.price}}</span></h6> -->
+                    <div style="text-align:center; display:flex; justify-content:center; align-items:center;" >
+                         <span id="divpr{{i.id}}" class="divpr" >
+                                    <button id="pr{{i.id}}" class="btn btn cart ac" style=" font-family:sans-serif ;     background-color:#fd2b77 ;  font-family:var(--font-1); font-weight:700; margin-left:-5px; border-left: 2px solid #fb3054;
+    border-top: 2px solid #fb3054; font-weight:950; color:white; border:2px solid #fd2b77;   box-shadow: 0px 5px 15px 0px rgb(244 83 134); "> Add To Cart
+                                    </button>
+                         </span>
+                                <a href="/shop/products/{{i.id}}">
+                                    <button id="qv{{i.id}}"  class="btn btn-primary cart qv" style=" font-family:sans-serif; color:#fd2b77;  font-weight:720; background-color:#fafcfd; color:#fd5a6c; border:2px solid #fd2b77; font-style:bold; font-family:var(--font-1); font-weight:900;   ">QuickView
+                                    </button>
+                                </a>
+                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+                </div>
+                <div class="carousel-item">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- left and right controls for the slide -->
+
+        <a class="carousel-control-prev" href="#demo{{forloop.counter}}" style="padding-right:4vw; margin-top:240px;" data-slide="prev">
+            <span class="carousel-control-prev-icon" style="background-color: rgb(240 8 87);" ></span>
+        </a>
+        <a class="carousel-control-next" href="#demo{{forloop.counter}}" style="padding-left:11vw;  margin-top:240px;" data-slide="next">
+            <span class="carousel-control-next-icon" style="background-color: rgb(240 8 87);" ></span>
+        </a>
+    </div>
+
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+{% block js %}
+
+
+<script type="text/javaScript">
+
+
+if (localStorage.getItem('cart') == null) {
+    var cart = {};
+} else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    updateCart(cart);
+}
+// If the add to cart button is clicked, add/increment the item
+//$('.cart').click(function() {
+$('.divpr').on('click', 'button.cart', function() {
+    var idstr = this.id.toString();
+    if (cart[idstr] != undefined) {
+        qty = cart[idstr][0] + 1;
+
+    } else {
+        qty = 1;
+        name = document.getElementById('name'+idstr).innerHTML
+        cart[idstr] = [qty, name];
+
+    }
+    updateCart(cart);
+});
+//Add Popover to cart
+$('#popcart').popover();
+updatePopover(cart);
+
+function updatePopover(cart) {
+    console.log('We are inside updatePopover');
+    var popStr = "";
+    popStr = popStr + "<h5 style='font-family:var(--font-1); font-weight:700;'> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
+    var i = 1;
+    for (var item in cart) {
+        popStr = popStr + "<b>" + i + "</b>. ";
+        popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 19) + "... Qty: " + cart[item][0] + '<br>';
+        i = i + 1;
+    }
+    popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary'  style='color: #fff;background-color: rgb(249 4 54);border-color:rgb(249 4 54);font-family: var(--font-1);font-weight: 800;   ' id ='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id ='clearCart' style='color: #fff;background-color: rgb(249 4 54);border-color: #ff000b;font-family: var(--font-1);font-weight: 650;  ' >Clear Cart</button>     "
+    console.log(popStr);
+    document.getElementById('popcart').setAttribute('data-content', popStr);
+    $('#popcart').popover('show');
+
+}
+
+
+function clearCart() {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    for (var item in cart) {
+        document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="btn btn-primary cart">Add To Cart</button>'
+    }
+    localStorage.clear();
+    cart = {};
+    updateCart(cart);
+}
+
+function updateCart(cart) {
+    var sum = 0;
+    for (var item in cart) {
+        sum = sum + cart[item][0];
+        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn  minus' style='background-color: #fd2b77; color:white; font-weight:800; border:2px solid #fd2b77; '>-</button> <span id='val" + item + "''>" + cart[item][0] + "</span> <button id='plus" + item + "' class='btn plus' style='background-color: #fd2b77; border:2px solid #fd2b77;  color:white; font-weight:800;'> + </button>";
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = sum;
+    console.log(cart);
+    updatePopover(cart);
+}
+// If plus or minus button is clicked, change the cart as well as the display value
+$('.divpr').on("click", "button.minus", function() {
+    a = this.id.slice(7, );
+    cart['pr' + a][0] = cart['pr' + a][0] - 1;
+    cart['pr' + a][0] = Math.max(0, cart['pr' + a][0]);
+    document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+    updateCart(cart);
+});
+$('.divpr').on("click", "button.plus", function() {
+    a = this.id.slice(6, );
+    cart['pr' + a][0] = cart['pr' + a][0] + 1;
+    document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+    updateCart(cart);
+});
+
+
+
+document.getElemenById('popcart').click().click()
+
+
+
+
+</script>
+
+
+<script>
+  window.onload = function () {
+
+      var typed = new Typed('#typed', {
+          strings: ["Welcome to Your Shop", "Tranding Clothes", "Best Watches", "Amazing Shoes", "Low Cost Avalaible", "Luxury Items For Men"],
+          backSpeed: 15,
+          smartBackspace: true,
+          backDelay: 1200,
+          startDelay: 1000,
+          typeSpeed: 25,
+          loop: true,
+      });
+  };
+
+
+
+  function hide_popovers(){
+    x=document.getElementById('popcart')
+    click=x.click()
+    click2=x.click()
+    }
+
+
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js" async defer></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+
+{% endblock %}

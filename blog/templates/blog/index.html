@@ -1,0 +1,52 @@
+{%extends 'blog/basic.html'%}
+
+
+{% block ul %}
+<li class="nav-item active">
+    <a class="nav-link" href="/shop" style="color:white; font-family:var(--font-1); font-weight:550;  margin-left:20px; margin-right:20px;">Home <span class="sr-only">(current)</span></a>
+  </li>
+<li class="nav-item">
+    <a class="nav-link" href="/shop/about" style="color:white; font-family:var(--font-1); font-weight:550;  margin-left:20px; margin-right:20px;">About </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="/shop" style="color:white; font-family:var(--font-1); font-weight:650;  margin-left:20px; margin-right:20px; font-size:1.4em;  ">GoToShop</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="/blog" style="color:white; font-family:var(--font-1); font-weight:660;  margin-left:20px;  color:#f8385e; font-size:1.2em; margin-right:180px; padding:7px ; border-radius:7px; ">Blog</a>
+  </li>
+
+
+  {% endblock %}
+{% block body %}
+
+<div class="container mt-3">
+<div class="row my-2">
+      {% for item in myposts %}
+
+
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static" style="">
+          <strong class="d-inline-block mb-2 text-primary" style="color:#d2ad10!important; font-family:var(--font-1); font-weight:600;">{{item.head0}}</strong>
+          <h3 class="mb-0" style="color:#ff007b; font-family : var(--font-1); Font-weight:630; ">{{item.title}}</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto" style="font-family:var(--font-1);">{{item.chead0|slice:":115"}}...</p>
+          <a href="blogpost/{{item.post_id}}" class="stretched-link">Continue reading</a>
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/media/{{item.thumbnail}}"class="bd-placeholder-img" width="200" height="250"  aria-label="Placeholder: Thumbnail"></img>
+        </div>
+      </div>
+    </div>
+{% if forloop.counter|divisibleby:2%}
+  </div><div class="row my-2">
+  {%endif%}
+
+  {%endfor%}</div>
+
+
+  </div>
+{%endblock%}

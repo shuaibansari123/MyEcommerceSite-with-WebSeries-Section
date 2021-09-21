@@ -1,0 +1,77 @@
+{% extends 'blog/basic.html' %}
+
+{% block ul %}
+<li class="nav-item active">
+    <a class="nav-link" href="/shop" style="color:white; font-family:var(--font-1); font-weight:550;  margin-left:20px; margin-right:20px;">Home <span class="sr-only">(current)</span></a>
+  </li>
+<li class="nav-item">
+    <a class="nav-link" href="/shop/about" style="color:white; font-family:var(--font-1); font-weight:550;  margin-left:20px; margin-right:20px;">About </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="/shop" style="color:white; font-family:var(--font-1); font-weight:650;  margin-left:20px; margin-right:20px; font-size:1.4em;  ">GoToShop</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="/blog" style="color:white; font-family:var(--font-1); font-weight:650;  margin-left:20px;  color:#f8385e; font-size:1.2em; margin-right:180px; padding:7px ; border-radius:7px; ">Blog</a>
+  </li>
+
+
+  {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 blog-main">
+            <h3 class="font-italic" style="color:#fd3772;">
+                {{post.title}}
+            </h3>
+
+            <div class="blog-post" >
+                <h2 class="blog-post-title" style="color:#fd3772;">{{post.heading0}}</h2>
+                <p class="blog-post-meta">January 1, 2014 by <a href="#" style="font-style:italic;">Shuaib</a></p>
+
+                <p style="">{{post.chead0}} </p>
+                <div class="mt-2 mb-4 fb-like " data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div><br>
+
+
+                <h2 style="color:#fd3772;">{{post.head1}}</h2>
+                <p>{{post.chead1}}</p>
+                <div class="mt-2 mb-4 fb-like " data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div><br>
+
+                <h2 style="color:#fd3772;">{{post.head2}}</h2>
+                <p>{{post.chead2}}</p>
+                <div class="mt-2 mb-4 fb-like " data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div><br>
+
+                <div class="fb-comments" data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}" data-numposts="5"></div>
+
+
+            </div><!-- /.blog-post -->
+
+
+
+
+        </div><!-- /.blog-main -->
+
+        <aside class="col-md-4 blog-sidebar" >
+            <div class="p-4 mb-3  rounded"  style="background-color:#f4d9e6;">
+                <h4 class="font-italic" style="color:#da196d;" >About</h4>
+                <p class="mb-0" style="color:#a47089; ">My Awesome Cart <em>started out as a small project and is now</em> the fastest growing e-commerce stores of all times in india and abroad.</p>
+                <div class="my-3 fb-share-button" data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fblogpost%2F4&src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+            </div>
+
+
+
+            <div class="p-4" style="background-color:#b5efb3;">
+                <h4 class="font-italic" style="color:#32b71e;">Elsewhere</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ol>
+            </div>
+        </aside><!-- /.blog-sidebar -->
+
+    </div>
+</div>
+
+{% endblock %}

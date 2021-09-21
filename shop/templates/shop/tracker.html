@@ -1,0 +1,131 @@
+{% extends 'shop/basic.html' %}
+{% block title%} My Awesome Cart Tracker{% endblock %}
+
+
+{% block ul %}
+
+
+<li class="nav-item active m-auto">
+    <a class="nav-link ml-2 mr-2" href="/shop" style="margin:auto; color#dc0a7f; font-family:var(--font-1);font-weight:900;  border-radius:5px;  padding-left:5px; padding-right:5px;  width:fit-content; text-align:center; margin-bottom:15px; margin-left:39%!important; color:#dc0a7f ; ">Home</a>
+  </li>
+
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/about" style="margin:auto; color: #dc0a7f ;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin:auto;  text-align:center; color:#dc0a7f ; margin-left:41%;">About</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/tracker" style="margin:auto; color: black;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px; margin-left:25px; margin-right:25px;  background-image: linear-gradient(to bottom right ,#f8385e , #f44063); width:fit-content; margin-left:41%; color:white ;">Tracker</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/blog" style=" margin:auto; color:black;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin-left:42%; color:#dc0a7f ;">Blog</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/contact" style="margin:auto; color: black; font-family:var(--font-1); font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin-left:41%; color:#dc0a7f ;">Contact </a>
+  </li>
+
+
+
+
+  {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="col my-5">
+        <h2 style="color:rgb(234 15 120);  font-family:var(--font-1);font-weight:800;">Enter your Order Id and Email address to track your order</h2>
+        <form method="post" action="#" id="trackerForm">{% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputname" style="color:rgb(234 15 120);  font-family:var(--font-1);font-weight:800;">Order Id</label>
+                    <input type="text" class="form-control" id="orderId" style="border:1px solid rgb(234 15 120);  font-family:var(--font-1);font-weight:800; #fdf1f1; " name="orderId" placeholder="Order Id">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4" style="color:rgb(234 15 120);  font-family:var(--font-1);font-weight:800;">Email</label>
+                    <input type="email" class="form-control" id="email"  style="border:1px solid rgb(234 15 120);  font-family:var(--font-1);font-weight:800; #fdf1f1 ; " name="email" placeholder="Email">
+                </div>
+                <button type="submit" class="btn " style="background-color:#ee0338; color:white; font-family:var(--font-1);font-weight:800;">Track Order</button>
+            </div>
+    </div>
+    <div class="col my-4">
+
+        <h2 style="color:rgb(234 15 120);  font-family:var(--font-1);font-weight:800;">Your Order Details</h2>
+        <div class="my-4">
+            <ul class="list-group" id="citems" style=" border:1px solid green;  color:white ; background-color:red; font-family:var(--font-1);font-weight:800;">
+            	</ul>
+        </div>
+
+        <h2 style="color:rgb(234 15 120);  font-family:var(--font-1);font-weight:800;">Your Order Status</h2>
+        <div class="my-4">
+            <ul class="list-group" id="items" style="color:rgb(234 15 120);  font-family:var(--font-1);font-weight:800;">
+            	Enter your order Id and Email and click Track Order to find details about your order!
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+$('#trackerForm').submit(function(event) {
+    $('#items').empty();
+    var formData = {
+        'orderId': $('input[name=orderId]').val(),
+        'email': $('input[name=email]').val(),
+        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+    };
+    $.ajax({
+            type: 'POST',
+            url: '/shop/tracker',
+            data: formData,
+            encode: true
+        })
+        .done(function(data) {
+            console.log(data)
+            data=JSON.parse(data)
+            updates = data[0];
+            console.log(data)
+            console.log(updates.length)
+            if (updates.length > 0 & updates != {}) {
+                for (i = 0; i < updates.length; i++) {
+                    let text = updates[i]['text'];
+                    let time = updates[i]['time'];
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center" style=" color:white; letter-spacing:1px; background-color: #ee0338;
+    border: 2px solid rgb(253 251 251 / 98%); border-radius:3px;  font-family:var(--font-1);font-weight:800;" >
+                    ${text}
+                    <span class="badge  badge-pill" style="background-color:white; color:#ee0338;  font-family:var(--font-1);font-weight:800;">${time}</span>
+                </li>`
+                    $('#items').append(mystr);
+                }
+            } else {
+            	mystr = `<li class="list-group-item d-flex justify-content-between align-items-center" stye="background-color: #ee0338;
+    border: 2px solid rgb(253 251 251 / 98%); border-radius:3px; color:green;  font-family:var(--font-1);font-weight:800;">
+                    Sorry, We are not able to fetch this order id and email. Make sure to type correct order Id and email</li>`
+            	$('#items').append(mystr);
+            }
+
+//fill the order details
+cart=JSON.parse(data[1]);
+for (item in cart) {
+
+let name = cart[item][1];
+let qty = cart[item][0];
+
+mystr = `<li class="list-group-item d-flex justify-content-between align-items-center" style="color:white; letter-spacing:1px; background-color: #ee0338;
+    border: 2px solid WHITE; border-radius:3px;  font-family:var(--font-1);font-weight:800;">
+   ${name}
+    <span class="badge  rounded-pill" style="background-color:white; color:#ee0338;  font-family:var(--font-1);font-weight:800;">${qty}</span>
+</li>
+`
+$("#citems").append(mystr);
+
+}
+
+
+        });
+    event.preventDefault();
+
+
+});
+</script>
+{% endblock %}

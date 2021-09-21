@@ -1,0 +1,116 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %}{{product.product_name}} -My Awesome Cart{% endblock %}
+
+
+{% block ul %}
+<li class="nav-item active">
+    <a class="nav-link ml-2 mr-2" href="/shop" style="color:rgb(249 4 54);  margin:Auto;  font-family:var(--font-1);margin-left:41%;  font-weight:600;  FONT-SIZE:1.4em;" >Shop</a>
+  </li>
+<li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/about" style="color:rgb(249 4 54); margin:Auto;  font-family:var(--font-1); margin-left:41%; font-weight:800;">About </a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/tracker" style="color:rgb(249 4 54); margin:Auto;  font-family:var(--font-1); margin-left:41%; font-weight:800;">Tracker</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/blog" style="color:rgb(249 4 54); font-family:var(--font-1); margin:Auto;  margin-left:41%;  font-weight:800;">Blog</a>
+  </li>
+
+  <li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/contact" style="color:rgb(249 4 54); font-family:var(--font-1); margin:Auto;  margin-left:41%; font-weight:800;">Contact</a>
+  </li>
+
+  {% endblock %}
+
+
+{% block body %}
+<div class="container my-4" >
+
+<div class="row">
+<div class="col md-6 pt-2 py-2" style="border:5px solid #fbe7ee; border-radius: 5px; width:50%; ">
+
+<div class="row" style="background-color:#fbe7ee; backdrop-filter: url(filters.svg#filter) blur(4px) saturate(150%);
+border-radius: 50%;">
+<div style="display:flex; padding-left:50px; border-radius: 50%; height: fit-content; backdrop-filter: blur(8px); background-color:#fbe7ee;   ">
+
+  <center><img src="/media/{{product.image}}"  width="276px" style=" border:5px solid #fbe7ee ; border-radius:8px;" height="385px"></center>
+</div>
+</div>
+
+
+<div class="row" style=" display:flex; justify-content: center; align-items: center;" >
+  <a href="/shop/checkout">
+  <button id="pr{{i.id}}" class=" btn btn-primary mx-3 mt-2 " style="color:white;  font-family:var(--font-1); font-weight:800; background-color:rgb(249 4 54); border:1px solid rgb(249 4 54); box-shadow:0 0 8px 0px rgb(249 4 54); font-size:1.15em; ">Buy Now</button>
+</a>
+</div>
+</div>
+
+<div class="col-md-8 mt-2">
+<h1 class="ml-4 mt-4 " style="color:rgb(249 114 149); font-family:var(--font-1); font-weight:800;">{{product.product_name}}</h1>
+
+<p class="ml-4 "  style="color:var(--pink); font-family:var(--font-1);  font-weight:800;"><b> Rs. <span style="color:#e48c13; font-family:var(--font-1); font-size:1.49em; font-weight:800;">{{product.price}}</span></b></p>
+<p class="  ml-4 "  style="color:#d48282;  font-size:0.8em; font-family:var(--font-1);  font-weight:800;" >{{product.desc}}</p>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+{% block js %}
+ <script>
+console.log("working.....")
+if(localStorage.getItem('cart') == null){
+var cart={};
+
+}
+
+else{
+    cart=JSON.parse(localStorage.getItem('cart'));
+
+document.getElementById('cart').innerHTML=Object.keys(cart).length;
+}
+
+$('.cart').click(function(){
+var idstr=this.id.toString();
+console.log(idstr)
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr]+1;
+
+}
+else{
+    cart[idstr] =1 ;
+}
+console.log(cart)
+localStorage.setItem('cart' , JSON.stringify(cart));
+document.getElementById('cart').innerHTML=Object.keys(cart).length;
+})
+
+
+/*popover activate karne ke liye ye likhna hoga Getbootstrap wali hi chalegi yaad rakhna hai ye*/
+/*  <button type="button" class="btn btn-secondary" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+    sagittis lacus vel augue laoreet rutrum faucibus.">
+          Cart(<span id='cart'>0</span>)
+        </button>
+  */
+/*only click krne pe show hogi*/
+$('#popcart').popover()
+
+/*bydefault show karne ke liye ye use hoga*/
+/*$('#popcart').popover('show')*/
+
+/*popover ka content change krne ke liye  -----NOTES: data-html="true" */
+document.getElementById('popcart').setAttribute('data-content' , '<h5>FOR YOUR CART of my site</h5>');
+
+
+
+
+ </script>
+ {% endblock %}

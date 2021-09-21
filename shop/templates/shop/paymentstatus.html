@@ -1,0 +1,46 @@
+{% extends 'shop/basic.html' %}
+{% block title%} My Awesome Cart Tracker{% endblock %}
+
+{% block ul %}
+<li class="nav-item active">
+    <a class="nav-link" href="/shop" style="color:greenyellow;">Home <span class="sr-only">(current)</span></a>
+  </li>
+<li class="nav-item">
+    <a class="nav-link" href="/shop/about" style="color:rgb(119, 194, 7);">About Us</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="/shop/tracker" style="color:rgb(119, 194, 7);">Tracker</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="/blog" style="color:rgb(119, 194, 7);">Blog</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" href="/shop/contact" style="color:rgb(119, 194, 7);">Contact Us</a>
+  </li>
+
+  {% endblock %}
+
+  
+{% block body %}
+<div class="container">
+    {{response}}
+    <div class="col my-4">
+
+        <h2>Payment status regarding your order Id {{response.ORDERID}}</h2>
+        {% if response.RESPCODE == '01' %}
+        ORDER SUCCESS
+        {% else %}
+        ORDER FAILURE
+        {% endif%}
+
+    </div>
+
+</div>
+{% endblock %}
+{% block js %}
+<script>
+</script>
+{% endblock %}

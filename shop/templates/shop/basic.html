@@ -184,53 +184,151 @@
 
 
 
-<footer class="footer" style="background: linear-gradient(135deg, var(--dark), #374151); padding: 60px 0 40px 0;">
-        <div class="container" style="margin:15px;" >
-          <div class="row" style="">
-            <div class="col-lg-6 h-100 text-center text-lg-left my-auto" style="">
-              <ul class="list-inline mb-2"  style="padding:30px; ">
-                <li class="list-inline-item">
-                  <a href="/shop/about" style="color:white; font-family:var(--font-1); font-size:1.3em; ">About</a>
-                </li>
-                <li class="list-inline-item">⋅</li>
-                <li class="list-inline-item">
-                  <a href="/shop/contact" style="color:white; font-family:var(--font-1); font-size:1.3em;">Contact</a>
-                </li>
-                <li class="list-inline-item">⋅</li>
-                <li class="list-inline-item">
-                  <a href="#" style="color:white; font-family:var(--font-1); font-size:1.3em;">Terms of Use</a>
-                </li>
-                <li class="list-inline-item">⋅</li>
-                <li class="list-inline-item">
-                  <a href="#" style="color:white; font-family:var(--font-1); font-size:1.3em;">Privacy Policy</a>
-                </li>
-              </ul>
-              <p class="text small mb-4 mb-lg-0" style="color: #d1d5db; font-size: 1rem; font-weight: 400; font-family: var(--font-1);">
-                © 2024 ShopEase. <span style="color: #d1d5db; font-size: 0.9rem; font-family: var(--font-1);">All Rights Reserved.</span>
-              </p>
+<!-- Professional Footer -->
+<footer class="footer" style="background: linear-gradient(135deg, #1f2937, #374151); margin-top: 80px;">
+  <!-- Main Footer Content -->
+  <div class="container py-5">
+    <div class="row g-4">
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-section">
+          <div class="d-flex align-items-center mb-4">
+            <img src="{% static 'shop/images/logo.svg' %}" style="height: 40px; width: auto; margin-right: 12px;" alt="ShopEase Logo">
+            <h4 class="mb-0" style="color: white; font-family: 'Inter', sans-serif; font-weight: 700;">ShopEase</h4>
+          </div>
+          <p style="color: #d1d5db; font-family: 'Inter', sans-serif; line-height: 1.6; margin-bottom: 24px;">
+            Your trusted e-commerce platform offering quality products with fast delivery and exceptional customer service.
+          </p>
+          <!-- Social Media -->
+          <div class="social-links">
+            <a href="#" class="me-3" style="color: #9ca3af; font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#9ca3af'">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="me-3" style="color: #9ca3af; font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#1da1f2'" onmouseout="this.style.color='#9ca3af'">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="me-3" style="color: #9ca3af; font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#e4405f'" onmouseout="this.style.color='#9ca3af'">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" style="color: #9ca3af; font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#0077b5'" onmouseout="this.style.color='#9ca3af'">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-section">
+          <h5 style="color: white; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 24px;">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="/shop" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">Home</a>
+            </li>
+            <li class="mb-2">
+              <a href="/shop/about" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">About Us</a>
+            </li>
+            <li class="mb-2">
+              <a href="/shop/contact" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">Contact</a>
+            </li>
+            <li class="mb-2">
+              <a href="/blog" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-section">
+          <h5 style="color: white; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 24px;">Categories</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="#" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">Electronics</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">Fashion</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">Home & Garden</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">Sports</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Customer Service -->
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-section">
+          <h5 style="color: white; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 24px;">Support</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="/shop/tracker" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">Order Tracking</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">Shipping Info</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">Returns</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" style="color: #d1d5db; text-decoration: none; font-family: 'Inter', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#d1d5db'">FAQ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-section">
+          <h5 style="color: white; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 24px;">Contact</h5>
+          <div class="contact-info">
+            <div class="d-flex align-items-start mb-3">
+              <i class="fas fa-envelope" style="color: #3b82f6; margin-top: 4px; margin-right: 12px;"></i>
+              <div>
+                <p style="color: #d1d5db; font-family: 'Inter', sans-serif; margin: 0; font-size: 0.9rem;">support@shopease.com</p>
+              </div>
             </div>
-            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-              <ul class="list-inline mb-0">
-                <li class="list-inline-item mr-3">
-                  <a href="#">
-                    <i class="fab fa-facebook fa-2x fa-fw" style="color:white; font-size:3em;"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item mr-3">
-                  <a href="#">
-                    <i class="fab fa-twitter-square fa-2x fa-fw" style="color:white; font-size:3em;"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-instagram fa-2x fa-fw" style="color:white; font-size:3em;"></i>
-                  </a>
-                </li>
-              </ul>
+            <div class="d-flex align-items-start mb-3">
+              <i class="fas fa-phone" style="color: #3b82f6; margin-top: 4px; margin-right: 12px;"></i>
+              <div>
+                <p style="color: #d1d5db; font-family: 'Inter', sans-serif; margin: 0; font-size: 0.9rem;">+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start">
+              <i class="fas fa-clock" style="color: #3b82f6; margin-top: 4px; margin-right: 12px;"></i>
+              <div>
+                <p style="color: #d1d5db; font-family: 'Inter', sans-serif; margin: 0; font-size: 0.9rem;">24/7 Customer Support</p>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom" style="border-top: 1px solid #374151; background: #111827;">
+    <div class="container py-4">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p style="color: #9ca3af; font-family: 'Inter', sans-serif; margin: 0; font-size: 0.9rem;">
+            © 2024 ShopEase. All rights reserved.
+          </p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="footer-links">
+            <a href="#" style="color: #9ca3af; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 0.9rem; margin-right: 20px; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#9ca3af'">Privacy Policy</a>
+            <a href="#" style="color: #9ca3af; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 0.9rem; margin-right: 20px; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#9ca3af'">Terms of Service</a>
+            <a href="#" style="color: #9ca3af; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 0.9rem; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#9ca3af'">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <!--
 <footer id="footer" class="footer-1"  style="    background-color:#ff9800;

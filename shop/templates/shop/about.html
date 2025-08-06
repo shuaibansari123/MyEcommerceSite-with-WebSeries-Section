@@ -1,52 +1,255 @@
 {% extends 'shop/basic.html' %}
+{% load static %}
 
-{% block title%} About Us{% endblock %}
+{% block title%} About Us - ShopEase{% endblock %}
 
 {% block ul %}
+<li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop" style="color: white !important; margin:auto; font-family:'Inter', sans-serif;font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Home</a>
+</li>
 
-<li class="nav-item active m-auto">
-    <a class="nav-link ml-2 mr-2" href="/shop" style=" color#dc0a7f; font-family:var(--font-1);font-weight:900;  border-radius:5px;  padding-left:5px; padding-right:5px; margin-bottom:20px;  width:fit-content; text-align:center;  color#dc0a7f;  font-weight:650; font-family:1.4em;">Home</a>
-  </li>
+<li class="nav-item active ml-2 mr-2">
+    <a class="nav-link" href="/shop/about" style="margin:auto; font-family:'Inter', sans-serif;font-weight:600; border-radius:25px; padding:8px 16px; background: linear-gradient(135deg, #2563eb, #1e40af); color:white; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); text-decoration: none;">About</a>
+</li>
 
+<li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/tracker" style="color: white !important; margin:auto; font-family:'Inter', sans-serif;font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Tracker</a>
+</li>
 
-  <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/shop/about" style="margin:auto; color: #dc0a7f ;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin:auto;  text-align:center;  color:white ; background-image: linear-gradient(to bottom right ,#f8385e , #f44063); margin-left:41%;">About</a>
-  </li>
+<li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/blog" style="color: white !important; margin:auto; font-family:'Inter', sans-serif;font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Blog</a>
+</li>
 
-  <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/shop/tracker" style="margin:auto; color: black;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px; width:fit-content; margin-left:41%; color:#dc0a7f;">Tracker</a>
-  </li>
+<li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/contact" style="color: white !important; margin:auto; font-family:'Inter', sans-serif;font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Contact</a>
+</li>
 
-  <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/blog" style=" margin:auto; color:black;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin-left:42%; color:#dc0a7f ;">Blog</a>
-  </li>
-
-  <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/shop/contact" style="margin:auto; color: black; font-family:var(--font-1); font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin-left:41%; color:#dc0a7f ;">Contact </a>
-  </li>
-
-
-  {% endblock %}
+{% endblock %}
 
 {% block body %}
 
-
-
-
-<main role="main">
-
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron" style="background-color:#fddcea; ">
+<!-- About Hero Section -->
+<section class="about-hero" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(30, 64, 175, 0.8)), url('{% static 'shop/images/hero.png' %}'); background-size: cover; background-position: center; min-height: 70vh; display: flex; align-items: center; position: relative;">
     <div class="container">
-      <h1 class="display-3" style="font-family:var(--font-1); ">My Awesome Cart!</h1>
-      <p style="font-family:var(--font-1); ">My Awesome Cart Pvt Ltd. is an Indian electronic commerce company based in Bengaluru, India. Founded by Sachin Bansal and Binny Bansal in 2007, the company initially focused on book sales, before expanding into other product categories such as consumer electronics, fashion, and lifestyle products.
-
-The service competes primarily with Amazon' s Indian subsidiary, and the domestic rival Snapdeal.[5][6] as of March 2017, Flipkart held a 39.5% market share of India's e-commerce industry.[7] Flipkart is significantly dominant in the sale of apparel (a position that was bolstered by its acquisitions of Myntra and Jabong.com), and was described as being "neck and neck" with Amazon in the sale of electronics and mobile phones.[8] Flipkart also owns PhonePe, a mobile payments service based on the Unified Payments Interface (UPI).
-
-In August 2018, U.S.-based retail chain Walmart acquired a 77% controlling stake in Flipkart for US$16 billion, valuing it at $22 billion.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button" style="background-color:#f10736; font-family:var(--font-1); color:white; font-weight:var(--font-1);  border:2px solid #f10736; ">Learn more »</a></p>
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <div class="hero-content" style="animation: fadeInUp 1s ease-out;">
+                    <h1 class="display-2 fw-bold text-white mb-4" style="font-family: 'Inter', sans-serif; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">
+                        About <span style="color: #fbbf24;">ShopEase</span>
+                    </h1>
+                    <p class="lead text-white mb-5" style="font-family: 'Inter', sans-serif; opacity: 0.95; font-size: 1.4rem; max-width: 600px; margin: 0 auto;">
+                        Your trusted e-commerce partner, delivering quality products and exceptional service since day one
+                    </p>
+                    <div class="hero-stats d-flex justify-content-center gap-5 flex-wrap">
+                        <div class="stat-item text-center">
+                            <div class="stat-number text-white" style="font-size: 2.5rem; font-weight: 800;">10K+</div>
+                            <div class="stat-label text-white" style="opacity: 0.8; font-size: 1.1rem;">Happy Customers</div>
+                        </div>
+                        <div class="stat-item text-center">
+                            <div class="stat-number text-white" style="font-size: 2.5rem; font-weight: 800;">5★</div>
+                            <div class="stat-label text-white" style="opacity: 0.8; font-size: 1.1rem;">Average Rating</div>
+                        </div>
+                        <div class="stat-item text-center">
+                            <div class="stat-number text-white" style="font-size: 2.5rem; font-weight: 800;">24/7</div>
+                            <div class="stat-label text-white" style="opacity: 0.8; font-size: 1.1rem;">Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+</section>
+
+<!-- About Content -->
+<div class="container py-5" style="background: linear-gradient(135deg, #f8fafc, #e2e8f0); min-height: 100vh;">
+    
+    <!-- Our Story Section -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+            <div class="story-section text-center mb-5">
+                <h2 class="display-4 fw-bold mb-4" style="color: var(--primary); font-family: 'Inter', sans-serif;">
+                    Our Story
+                </h2>
+                <p class="lead text-muted" style="font-family: 'Inter', sans-serif; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                    Founded with a vision to revolutionize online shopping, ShopEase has grown from a small startup to a trusted e-commerce platform serving thousands of customers worldwide.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission & Vision Cards -->
+    <div class="row g-4 mb-5">
+        <div class="col-lg-6">
+            <div class="mission-card h-100" style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid var(--primary);">
+                <div class="card-icon mb-4" style="width: 80px; height: 80px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-bullseye" style="color: white; font-size: 2rem;"></i>
+                </div>
+                <h3 class="fw-bold mb-3" style="color: var(--primary); font-family: 'Inter', sans-serif;">Our Mission</h3>
+                <p style="color: var(--dark); font-family: 'Inter', sans-serif; line-height: 1.7; font-size: 1.1rem;">
+                    To provide an exceptional online shopping experience by offering high-quality products, competitive prices, and outstanding customer service that exceeds expectations.
+                </p>
+            </div>
+        </div>
+        
+        <div class="col-lg-6">
+            <div class="vision-card h-100" style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid #fbbf24;">
+                <div class="card-icon mb-4" style="width: 80px; height: 80px; background: linear-gradient(135deg, #fbbf24, #f59e0b); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-eye" style="color: white; font-size: 2rem;"></i>
+                </div>
+                <h3 class="fw-bold mb-3" style="color: #f59e0b; font-family: 'Inter', sans-serif;">Our Vision</h3>
+                <p style="color: var(--dark); font-family: 'Inter', sans-serif; line-height: 1.7; font-size: 1.1rem;">
+                    To become the world's most customer-centric e-commerce platform, where people can find and discover anything they want to buy online with ease and confidence.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Values Section -->
+    <div class="values-section mb-5">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold mb-3" style="color: var(--primary); font-family: 'Inter', sans-serif;">
+                    Our Core Values
+                </h2>
+                <p class="lead text-muted" style="font-family: 'Inter', sans-serif;">
+                    The principles that guide everything we do
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card text-center h-100" style="background: white; border-radius: 15px; padding: 30px 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s;"
+                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.15)'"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+                    <div class="value-icon mb-3" style="font-size: 3rem; color: var(--primary);">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4 style="color: var(--dark); font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 15px;">Customer First</h4>
+                    <p style="color: #6b7280; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6;">
+                        Every decision we make starts with our customers in mind
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card text-center h-100" style="background: white; border-radius: 15px; padding: 30px 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s;"
+                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.15)'"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+                    <div class="value-icon mb-3" style="font-size: 3rem; color: #059669;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 style="color: var(--dark); font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 15px;">Quality Assured</h4>
+                    <p style="color: #6b7280; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6;">
+                        We guarantee the highest quality in every product we offer
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card text-center h-100" style="background: white; border-radius: 15px; padding: 30px 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s;"
+                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.15)'"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+                    <div class="value-icon mb-3" style="font-size: 3rem; color: #7c3aed;">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4 style="color: var(--dark); font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 15px;">Innovation</h4>
+                    <p style="color: #6b7280; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6;">
+                        Constantly improving and innovating for better experiences
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card text-center h-100" style="background: white; border-radius: 15px; padding: 30px 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s;"
+                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.15)'"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+                    <div class="value-icon mb-3" style="font-size: 3rem; color: #f59e0b;">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4 style="color: var(--dark); font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 15px;">Integrity</h4>
+                    <p style="color: #6b7280; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6;">
+                        Building trust through transparency and honest practices
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold mb-3" style="color: var(--primary); font-family: 'Inter', sans-serif;">
+                    Meet Our Team
+                </h2>
+                <p class="lead text-muted" style="font-family: 'Inter', sans-serif;">
+                    The passionate people behind ShopEase's success
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card text-center" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s;"
+                     onmouseover="this.style.transform='translateY(-5px)'"
+                     onmouseout="this.style.transform='translateY(0)'">
+                    <div class="team-avatar mb-3" style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #2563eb, #1e40af); margin: 0 auto; display: flex; align-items: center; justify-content: center; border: 4px solid white; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <i class="fas fa-user" style="color: white; font-size: 3rem;"></i>
+                    </div>
+                    <h4 style="color: var(--dark); font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 5px;">Shuaib Ansari</h4>
+                    <p style="color: var(--primary); font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 15px;">Founder & CEO</p>
+                    <p style="color: #6b7280; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6;">
+                        Visionary leader with 10+ years of e-commerce experience, passionate about creating exceptional customer experiences.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card text-center" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s;"
+                     onmouseover="this.style.transform='translateY(-5px)'"
+                     onmouseout="this.style.transform='translateY(0)'">
+                    <div class="team-avatar mb-3" style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #059669, #047857); margin: 0 auto; display: flex; align-items: center; justify-content: center; border: 4px solid white; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <i class="fas fa-user" style="color: white; font-size: 3rem;"></i>
+                    </div>
+                    <h4 style="color: var(--dark); font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 5px;">Tech Team</h4>
+                    <p style="color: #059669; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 15px;">Development Team</p>
+                    <p style="color: #6b7280; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6;">
+                        Our talented developers and designers work tirelessly to bring you the best online shopping experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<section class="cta-section py-5" style="background: linear-gradient(135deg, var(--primary), #1e40af);">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h2 class="text-white mb-3" style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 2.5rem;">
+                    Ready to Start Shopping?
+                </h2>
+                <p class="text-white mb-4" style="opacity: 0.9; font-family: 'Inter', sans-serif; font-size: 1.2rem;">
+                    Join thousands of satisfied customers and discover amazing products at unbeatable prices
+                </p>
+                <div class="cta-buttons d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="/shop" class="btn btn-lg" style="background: white; color: var(--primary); border: none; border-radius: 25px; padding: 15px 40px; font-family: 'Inter', sans-serif; font-weight: 700; text-decoration: none; transition: all 0.3s;"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.2)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <i class="fas fa-shopping-bag me-2"></i>Start Shopping
+                    </a>
+                    <a href="/shop/contact" class="btn btn-outline-light btn-lg" style="border: 2px solid white; color: white; border-radius: 25px; padding: 15px 40px; font-family: 'Inter', sans-serif; font-weight: 700; text-decoration: none; transition: all 0.3s;"
+                       onmouseover="this.style.background='white'; this.style.color='var(--primary)'"
+                       onmouseout="this.style.background='transparent'; this.style.color='white'">
+                        <i class="fas fa-envelope me-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
   <div class="container">
     <!-- Example row of columns -->

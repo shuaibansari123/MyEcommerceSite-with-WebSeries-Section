@@ -332,106 +332,221 @@ margin-right:auto;
 
 
 
-<!-- For demo purpose-->
-<section class="py-5 text-white position-relative hero-section">
-  <form>
-    <div class="container py-4">
-      <div class="row"  style="margin:Auto; width:100%;">
-
-
-        <div class="col-lg-8 mx-auto text-center">
-          <h1 class="jumbotron-heading mb-4">
-              <span id="typed" style="font-size:2.5em; color:white; font-family: var(--font-1); font-weight: 700; text-shadow: 0 4px 8px rgba(0,0,0,0.3);"></span></h1>
-
-          <input type="text" id="search1" name="search1" column="4" row="4" class="mt-4 form-control-lg" placeholder="Search for amazing products..." style="background-color:rgba(255,255,255,0.95); width:95%; border-radius: 50px; height: 60px; border:none; font-family: var(--font-1); font-weight:500; box-shadow: 0 8px 32px rgba(0,0,0,0.1); padding: 0 30px;"><br>
-     <a href='/shop/search'>
-          <button type="submit" class="btn btn-lg" name="submit1" id="submit1" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color:white; border:2px solid rgba(255,255,255,0.3); padding:12px 40px; margin-top:20px; font-size:1.2em; border-radius: 50px; font-family:var(--font-1); font-weight:600; transition: all 0.3s; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">🔍 Search Products</button></a>
+<!-- Hero Section -->
+<section class="hero-section position-relative text-white d-flex align-items-center" style="min-height: 85vh; background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(30, 64, 175, 0.8)), url('/media/shop/images/hero.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-8 col-lg-10 col-md-12">
+        <div class="text-center hero-content py-5">
+          <!-- Main Heading -->
+          <h1 class="display-2 fw-bold mb-4" style="font-family: 'Inter', sans-serif; text-shadow: 2px 2px 8px rgba(0,0,0,0.4); line-height: 1.2;">
+            Welcome to <span id="typed" style="color: #fbbf24; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">ShopEase</span>
+          </h1>
+          
+          <!-- Subtitle -->
+          <p class="lead mb-5" style="font-size: 1.4rem; opacity: 0.95; font-family: 'Inter', sans-serif; font-weight: 500; max-width: 600px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">
+            Discover amazing products at unbeatable prices with fast, reliable delivery
+          </p>
+          
+          <!-- Search Form -->
+          <div class="search-container mb-5">
+            <form method="get" action="/shop/search" class="search-form">
+              <div class="input-group mx-auto" style="max-width: 600px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <input 
+                  type="text" 
+                  id="search1" 
+                  name="search1" 
+                  class="form-control" 
+                  placeholder="Search for amazing products..." 
+                  style="
+                    background-color: rgba(255,255,255,0.98); 
+                    border-radius: 50px 0 0 50px; 
+                    height: 60px; 
+                    border: none; 
+                    font-family: 'Inter', sans-serif; 
+                    font-weight: 500; 
+                    padding: 0 25px; 
+                    font-size: 1.1rem; 
+                    backdrop-filter: blur(10px);
+                    color: #1f2937;
+                  "
+                >
+                <button 
+                  type="submit" 
+                  class="btn" 
+                  name="submit1" 
+                  id="submit1" 
+                  style="
+                    background: rgba(255,255,255,0.25); 
+                    backdrop-filter: blur(15px); 
+                    color: white; 
+                    border: none; 
+                    padding: 0 25px; 
+                    font-size: 1.1rem; 
+                    border-radius: 0 50px 50px 0; 
+                    font-family: 'Inter', sans-serif; 
+                    font-weight: 600; 
+                    transition: all 0.3s ease; 
+                    display: flex; 
+                    align-items: center; 
+                    gap: 8px;
+                    height: 60px;
+                  "
+                >
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+                  <span class="d-none d-sm-inline">Search</span>
+                </button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Category Badges -->
+          <div class="hero-badges d-flex flex-wrap justify-content-center gap-3">
+            <span class="badge px-3 py-2" style="background: rgba(255,255,255,0.2); color: white; font-size: 0.9rem; border-radius: 25px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">📱 Electronics</span>
+            <span class="badge px-3 py-2" style="background: rgba(255,255,255,0.2); color: white; font-size: 0.9rem; border-radius: 25px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">👕 Fashion</span>
+            <span class="badge px-3 py-2" style="background: rgba(255,255,255,0.2); color: white; font-size: 0.9rem; border-radius: 25px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">🏠 Home & Garden</span>
+            <span class="badge px-3 py-2" style="background: rgba(255,255,255,0.2); color: white; font-size: 0.9rem; border-radius: 25px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">⚽ Sports</span>
+          </div>
         </div>
-
-
-
-
-
       </div>
-     <div style="display:flex; "></div>
     </div>
-      </form>
-  </section>
+  </div>
+</section>
 
 
 
- <div class="alert alert-success text-center py-3 mx-3 rounded-pill" style="background: linear-gradient(135deg, var(--success), #34d399); border: none; color: white; font-family: var(--font-1); font-weight: 600; margin-top: 40px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">
-        🚚 FREE SHIPPING on orders above ₹499 | 📞 24/7 Customer Support
+     <div class="alert alert-success text-center py-4 mx-3" style="background: linear-gradient(135deg, var(--success), #34d399); border: none; color: white; font-family: var(--font-1); font-weight: 600; margin: 40px auto; border-radius: 20px; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); animation: shimmer 3s infinite;"></div>
+        <div style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.2em;">🚚</span>
+                FREE SHIPPING on orders above ₹499
+            </span>
+            <span style="opacity: 0.7;">|</span>
+            <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.2em;">📞</span>
+                24/7 Customer Support
+            </span>
+            <span style="opacity: 0.7;">|</span>
+            <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.2em;">🔒</span>
+                Secure Payment
+            </span>
+        </div>
     </div>
+
+    <style>
+    @keyframes shimmer {
+        0% { left: -100%; }
+        100% { left: 100%; }
+    }
+    </style>
 
 
 
     <!--Slideshow starts here -->
 
 
-    {% for product, range, nSlides in allProds %}
-    <h4 class="my-5 text-center" style="color: var(--dark); margin-left:2%; font-size:2em; font-family:var(--font-1); font-weight:700;">✨ Flash Sale On <span style="color:white; font-size:1.2em; margin:0 10px; background: var(--gradient-primary); padding:8px 20px; border-radius:25px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);">{{product.0.category.capitalize}}</span> - Featured Products</h4>
-    <div class="row" data-aos="flip-right">
-        <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
+        {% for product, range, nSlides, count in allProds %}
+      <h4 class="my-5 text-center" style="color: var(--dark); margin-left:2%; font-size:2em; font-family:var(--font-primary); font-weight:var(--font-weight-bold);">✨ Flash Sale On <span style="color:white; font-size:1.2em; margin:0 10px; background: var(--gradient-primary); padding:8px 20px; border-radius:25px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);">{{product.0.category.capitalize}}</span> 
+      <span style="background: var(--gradient-success); color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.8em; margin-left: 10px; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);">{{count}} Items</span></h4>
+    <div class="container-fluid px-4" data-aos="flip-right">
+        <div id="demo{{forloop.counter}}" class="carousel slide my-4" data-ride="carousel">
             <ul class="carousel-indicators">
                 <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
                 {% for i in range %}
                 <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
                 {% endfor %}
             </ul>
-            <div class="container carousel-inner no-padding">
-                <div class="carousel-item active" style="width:110%;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
                     {% for i in product %}
-                    <div class="col-xs-3 col-sm-3 col-md-3" style="width:119%; " >
-                        <div class="card align-items-center my-3 h-100" id="b__box" style="width:20.945rem; margin-left:0px; padding:0px; border:none; background-color:#ffffff; border-radius:15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s; overflow: hidden;">
-                            <img src='/media/{{i.image}}' class="card-img-top my-0 mx-0" style="width:100%; height:200px; object-fit:cover; margin-right:0; padding:0; margin-left:0px; border-radius:15px 15px 0 0;" alt="{{i.product_name}}">
-                            <div class="card-body">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" >
+                        <div class="card h-100 product-card" style="border:none; background-color:#ffffff; border-radius:20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s; overflow: hidden; transform-origin: center;">
+                            <div style="position: relative; overflow: hidden;">
+                                <img src='/media/{{i.image}}' class="card-img-top" style="width:100%; height:220px; object-fit:cover; border-radius:20px 20px 0 0; transition: all 0.3s;" alt="{{i.product_name}}">
+                                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                    <span style="color: #ef4444; font-size: 1.2em;">♡</span>
+                                </div>
+                                <div style="position: absolute; top: 10px; left: 10px; background: linear-gradient(135deg, #ef4444, #dc2626); color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.75em; font-weight: 600; box-shadow: 0 2px 8px rgba(239,68,68,0.3);">
+                                    SALE
+                                </div>
+                            </div>
+                            <div class="card-body" style="padding: 20px;">
 
-                <Div style="display:flex; flex-direction:row; justify-content: space-around;  ">
-                        <img src="{% static 'shop/star-rating-png.png' %}"  class="card-img-top mx-0" style="margin-bottom: 5px;  margin-top:-3.5px; height: 25px; width:62%; border-radius:5px; margin-left:auto; margin-right:auto; text-align:center;" alt="Rating">
-</Div>
- <Div style="display:flex; flex-direction:row; justify-content: space-around;  ">
-                        <h6 class="card-title" style="color:rgb(150 147 147) ; align-self:flex-end;  margin-bottom: 0.4rem;    align-self:flex-end; margin-right:18px; margin-left:10px;" >
-
-                    <span  style="font-size:1.5em; font-weight:650; color:rgb(185 145 34); font-family:var(--font-1); font-weight:800; margin-top:-2px;margin-bottom: 4px; margin-left:5px; ">
-                      <!--       <span   style="font-size:0.7em; font-weight:500;  margin-left:-4px; color:rgb(245 183 10); padding-left:7px; margin-right:0px;"  >Rs.</span>-->
-                         <span id="pricepr{{i.id}}" style="font-size:1.5em; font-weight:700; color: var(--primary); font-family: var(--font-1); margin-top:-2px; margin-bottom: 4px; margin-right:1px;">₹{{i.price}}</span>
-                    </span>
-
-                        </h6>
-                </Div>
+                <!-- Star Rating -->
+                <div style="display: flex; justify-content: center; margin-bottom: 10px;">
+                    <div style="display: flex; gap: 2px;">
+                        <span style="color: #fbbf24; font-size: 1.1em;">★</span>
+                        <span style="color: #fbbf24; font-size: 1.1em;">★</span>
+                        <span style="color: #fbbf24; font-size: 1.1em;">★</span>
+                        <span style="color: #fbbf24; font-size: 1.1em;">★</span>
+                        <span style="color: #e5e7eb; font-size: 1.1em;">★</span>
+                        <span style="color: #6b7280; font-size: 0.85em; margin-left: 8px; font-family: var(--font-1);">(4.2)</span>
+                    </div>
+                </div>
+                
+                <!-- Price Section -->
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <span id="pricepr{{i.id}}" style="font-size: 1.8em; font-weight: 800; color: var(--primary); font-family: var(--font-1);">₹{{i.price}}</span>
+                        <span style="font-size: 1.1em; color: #9ca3af; text-decoration: line-through; font-family: var(--font-1);">₹{{i.price|add:500}}</span>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.75em; font-weight: 600; display: inline-block; margin-top: 5px;">
+                        SAVE ₹500
+                    </div>
+                </div>
 
 
 
                                 <h5 class="card-title" id="namepr{{i.id}}" style="color: var(--dark); font-weight: 600; font-size:1.2em; font-family: var(--font-1); text-align:center; margin-bottom:15px; line-height: 1.4;">{{i.product_name.capitalize}}</h5>
                               <!--  <p class="card-text" style="color:rgb(185 145 34);  text-align:center; margin-bottom:6px; font-family:var(--font-1); font-weight:700;  ">{{i.desc|slice:"0:33"}}...</p>-->
                                <!--<h6 class="card-title" style="color:rgb(245, 6, 117) ; margin-bottom: 0.4rem;" >Price : <span id="pricepr{{i.id}}" style="font-size:1.5em; font-weight:650; color:rgb(245, 6, 117); margin-top:-2px; margin-bottom: 4px;">{{i.price}}</span></h6> -->
-                    <div style="text-align:center; display:flex; justify-content:center; align-items:center;" >
-                         <span id="divpr{{i.id}}" class="divpr" >
-                                    <button id="pr{{i.id}}" class="btn btn cart ac" style="background: var(--gradient-primary); color:white; border:none; border-radius:25px; padding:8px 20px; font-family: var(--font-1); font-weight:600; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); transition: all 0.3s; margin-right: 8px;">🛒 Add To Cart</button>
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                         <span id="divpr{{i.id}}" class="divpr" style="width: 100%;">
+                                    <button id="pr{{i.id}}" class="btn btn cart ac" style="width: 100%; background: var(--gradient-primary); color: white; border: none; border-radius: 25px; padding: 12px 20px; font-family: var(--font-1); font-weight: 600; box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3); transition: all 0.3s; position: relative; overflow: hidden;">
+                                        <span style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                            <span style="font-size: 1.1em;">🛒</span>
+                                            Add To Cart
+                                        </span>
+                                    </button>
                          </span>
-                                <a href="/shop/products/{{i.id}}">
-                                    <button id="qv{{i.id}}" class="btn btn-outline-primary cart qv" style="color: var(--primary); background-color:transparent; border:2px solid var(--primary); border-radius:25px; padding:8px 20px; font-family: var(--font-1); font-weight:600; transition: all 0.3s;">👁️ Quick View</button>
+                                <a href="/shop/products/{{i.id}}" style="width: 100%; text-decoration: none;">
+                                    <button id="qv{{i.id}}" class="btn btn-outline-primary cart qv" style="width: 100%; color: var(--primary); background-color: rgba(59, 130, 246, 0.05); border: 2px solid var(--primary); border-radius: 25px; padding: 12px 20px; font-family: var(--font-1); font-weight: 600; transition: all 0.3s; position: relative; overflow: hidden;">
+                                        <span style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                            <span style="font-size: 1.1em;">👁️</span>
+                                            Quick View
+                                        </span>
+                                    </button>
                                 </a>
                     </div>
                             </div>
                         </div>
                     </div>
                     {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+                    </div>
                 </div>
                 <div class="carousel-item">
+                    <div class="row justify-content-center">
                     {% endif %}
                     {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- left and right controls for the slide -->
-
-        <a class="carousel-control-prev" href="#demo{{forloop.counter}}" style="padding-right:4vw; margin-top:240px;" data-slide="prev">
-            <span class="carousel-control-prev-icon" style="background-color: rgb(240 8 87);" ></span>
+        <!-- Modern carousel controls -->
+        <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev" style="width: 5%; left: -2%;">
+            <div style="background: var(--gradient-primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); transition: all 0.3s;">
+                <span style="color: white; font-size: 1.5em; font-weight: bold;">‹</span>
+            </div>
         </a>
-        <a class="carousel-control-next" href="#demo{{forloop.counter}}" style="padding-left:11vw;  margin-top:240px;" data-slide="next">
-            <span class="carousel-control-next-icon" style="background-color: rgb(240 8 87);" ></span>
+        <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next" style="width: 5%; right: -2%;">
+            <div style="background: var(--gradient-primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); transition: all 0.3s;">
+                <span style="color: white; font-size: 1.5em; font-weight: bold;">›</span>
+            </div>
         </a>
     </div>
 
@@ -474,6 +589,10 @@ $('.divpr').on('click', 'button.cart', function() {
 
     }
     updateCart(cart);
+    // Force update popover immediately
+    $('#popcart').popover('dispose');
+    updatePopover(cart);
+    $('#popcart').popover('show');
 });
 //Add Popover to cart
 $('#popcart').popover();
@@ -482,18 +601,70 @@ updatePopover(cart);
 function updatePopover(cart) {
     console.log('We are inside updatePopover');
     var popStr = "";
-    popStr = popStr + "<h5 style='font-family:var(--font-1); font-weight:700;'> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
-    var i = 1;
-    for (var item in cart) {
-        popStr = popStr + "<b>" + i + "</b>. ";
-        popStr = popStr + document.getElementById('namepr' + item.slice(2)).innerHTML.slice(0, 19) + "... Qty: " + cart[item][0] + '<br>';
-        i = i + 1;
+    var totalItems = 0;
+    var totalPrice = 0;
+    
+    // Header with modern styling
+    popStr = popStr + "<div style='background: linear-gradient(135deg, #f8fafc, #e2e8f0); padding: 15px; margin: -12px -12px 15px -12px; border-radius: 12px 12px 0 0;'>";
+    popStr = popStr + "<h5 style='font-family: var(--font-1); font-weight: 700; color: var(--dark); margin: 0; display: flex; align-items: center;'>";
+    popStr = popStr + "<span style='background: var(--gradient-primary); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px; font-size: 0.9em;'>🛒</span>";
+    popStr = popStr + "Shopping Cart</h5></div>";
+    
+    if (Object.keys(cart).length === 0) {
+        popStr = popStr + "<div style='text-align: center; padding: 20px; color: #6b7280;'>";
+        popStr = popStr + "<div style='font-size: 3em; margin-bottom: 10px;'>🛒</div>";
+        popStr = popStr + "<p style='font-family: var(--font-1); margin: 0;'>Your cart is empty</p>";
+        popStr = popStr + "<small style='color: #9ca3af;'>Add some products to get started!</small>";
+        popStr = popStr + "</div>";
+    } else {
+        // Cart items with modern card design
+        popStr = popStr + "<div style='max-height: 300px; overflow-y: auto; margin-bottom: 15px;'>";
+        var i = 1;
+        for (var item in cart) {
+            var itemName = document.getElementById('namepr' + item.slice(2)).innerHTML;
+            var itemPrice = document.getElementById('pricepr' + item.slice(2)).innerHTML.replace('₹', '');
+            var quantity = cart[item][0];
+            var itemTotal = parseInt(itemPrice) * quantity;
+            
+            totalItems += quantity;
+            totalPrice += itemTotal;
+            
+            popStr = popStr + "<div style='background: white; border-radius: 10px; padding: 12px; margin-bottom: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid var(--primary);'>";
+            popStr = popStr + "<div style='display: flex; justify-content: space-between; align-items: center;'>";
+            popStr = popStr + "<div style='flex: 1;'>";
+            popStr = popStr + "<h6 style='margin: 0; font-family: var(--font-1); font-weight: 600; color: var(--dark); font-size: 0.9em;'>" + itemName.slice(0, 25) + (itemName.length > 25 ? '...' : '') + "</h6>";
+            popStr = popStr + "<div style='display: flex; align-items: center; margin-top: 5px;'>";
+            popStr = popStr + "<span style='background: var(--gradient-primary); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.75em; font-weight: 600; margin-right: 8px;'>Qty: " + quantity + "</span>";
+            popStr = popStr + "<span style='color: var(--primary); font-weight: 700; font-size: 0.9em;'>₹" + itemTotal + "</span>";
+            popStr = popStr + "</div></div>";
+            popStr = popStr + "<div style='color: #6b7280; font-size: 0.8em; margin-left: 10px;'>₹" + itemPrice + " each</div>";
+            popStr = popStr + "</div></div>";
+            i = i + 1;
+        }
+        popStr = popStr + "</div>";
+        
+        // Total section with modern styling
+        popStr = popStr + "<div style='background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 1px solid #bae6fd;'>";
+        popStr = popStr + "<div style='display: flex; justify-content: space-between; align-items: center;'>";
+        popStr = popStr + "<div style='font-family: var(--font-1); font-weight: 600; color: var(--dark);'>Total Items: <span style='color: var(--primary);'>" + totalItems + "</span></div>";
+        popStr = popStr + "<div style='font-family: var(--font-1); font-weight: 700; font-size: 1.2em; color: var(--primary);'>₹" + totalPrice + "</div>";
+        popStr = popStr + "</div></div>";
     }
-    popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary' style='background: var(--gradient-primary); border: none; color: white; font-family: var(--font-1); font-weight: 600; border-radius: 25px; padding: 10px 20px; margin-right: 10px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);' id='checkout'>🛒 Checkout</button></a> <button class='btn btn-outline-danger' onclick='clearCart()' id='clearCart' style='border: 2px solid var(--danger); color: var(--danger); background: transparent; font-family: var(--font-1); font-weight: 600; border-radius: 25px; padding: 10px 20px;'>🗑️ Clear Cart</button>"
+    
+    // Action buttons with improved styling
+    popStr = popStr + "<div style='display: flex; gap: 10px; margin-top: 15px;'>";
+    if (Object.keys(cart).length > 0) {
+        popStr = popStr + "<a href='/shop/checkout' style='flex: 1; text-decoration: none;'>";
+        popStr = popStr + "<button class='btn btn-primary' style='width: 100%; background: var(--gradient-primary); border: none; color: white; font-family: var(--font-1); font-weight: 600; border-radius: 25px; padding: 12px 20px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); transition: all 0.3s;' id='checkout'>";
+        popStr = popStr + "<span style='margin-right: 8px;'>🚀</span>Checkout Now</button></a>";
+        popStr = popStr + "<button class='btn btn-outline-danger' onclick='clearCart()' id='clearCart' style='border: 2px solid var(--danger); color: var(--danger); background: transparent; font-family: var(--font-1); font-weight: 600; border-radius: 25px; padding: 12px 16px; transition: all 0.3s;' title='Clear Cart'>";
+        popStr = popStr + "🗑️</button>";
+    }
+    popStr = popStr + "</div>";
+    
     console.log(popStr);
     document.getElementById('popcart').setAttribute('data-content', popStr);
     $('#popcart').popover('show');
-
 }
 
 
@@ -511,7 +682,7 @@ function updateCart(cart) {
     var sum = 0;
     for (var item in cart) {
         sum = sum + cart[item][0];
-        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn minus' style='background: var(--danger); color:white; font-weight:600; border:none; border-radius:50%; width:35px; height:35px; margin-right:8px;'>-</button> <span id='val" + item + "' style='font-weight:600; color: var(--dark); margin:0 10px; font-size:1.1em;'>" + cart[item][0] + "</span> <button id='plus" + item + "' class='btn plus' style='background: var(--success); border:none; border-radius:50%; width:35px; height:35px; color:white; font-weight:600; margin-left:8px;'>+</button>";
+        document.getElementById('div' + item).innerHTML = "<div style='display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-radius: 25px; padding: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);'><button id='minus" + item + "' class='btn minus' style='background: linear-gradient(135deg, #ef4444, #dc2626); color:white; font-weight:600; border:none; border-radius:50%; width:32px; height:32px; display: flex; align-items: center; justify-content: center; font-size: 1.2em; line-height: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); transition: all 0.2s;'>−</button> <div style='background: white; border-radius: 15px; padding: 6px 16px; margin: 0 8px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);'><span id='val" + item + "' style='font-weight:700; color: var(--primary); font-size:1.1em; font-family: var(--font-1);'>" + cart[item][0] + "</span></div> <button id='plus" + item + "' class='btn plus' style='background: linear-gradient(135deg, #10b981, #059669); border:none; border-radius:50%; width:32px; height:32px; color:white; font-weight:600; display: flex; align-items: center; justify-content: center; font-size: 1.2em; line-height: 1; box-shadow: 0 2px 4px rgba(16,185,129,0.3); transition: all 0.2s;'>+</button></div>";
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     document.getElementById('cart').innerHTML = sum;

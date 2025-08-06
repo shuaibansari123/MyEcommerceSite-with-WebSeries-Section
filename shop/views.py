@@ -14,11 +14,22 @@ def index(request):
     allProds = []
     catprods = Product.objects.values('category', 'id')
     cats = {item['category'] for item in catprods}
+    
+    # Create category list with product counts for sorting
+    cat_counts = []
     for cat in cats:
+        prod = Product.objects.filter(category=cat)
+        cat_counts.append((cat, len(prod)))
+    
+    # Sort categories by product count (descending order)
+    cat_counts.sort(key=lambda x: x[1], reverse=True)
+    
+    for cat, count in cat_counts:
         prod = Product.objects.filter(category=cat)
         n = len(prod)
         nSlides = n // 4 + ceil((n / 4) - (n // 4))
-        allProds.append([prod, range(1, nSlides), nSlides])
+        allProds.append([prod, range(1, nSlides), nSlides, count])  # Add count to the data
+    
     params = {'allProds':allProds}
     return render(request, 'shop/index.html', params)
 

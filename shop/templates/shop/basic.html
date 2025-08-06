@@ -86,39 +86,34 @@
 
 
 
- <nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0 2px 4px rgba(0,0,0,0.1);"">
-  <a class="navbar-brand d-flex align-items-center" href="/shop" style="color: var(--primary); font-weight: 700; font-size:1.5em; font-family: var(--font-1);">
-      <img src="{% static 'shop/pink-logo.jpeg' %}" style="width:50px; height:50px; border-radius: 8px; margin-right: 10px;" alt="Logo">
-      <span>ShopEase</span>
-</a>
+ <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" style="box-shadow: var(--shadow-md); backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.95) !important;">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="/shop" style="color: var(--primary); font-weight: var(--font-weight-extrabold); font-size: 1.75rem; font-family: var(--font-primary); text-decoration: none;">
+        <img src="{% static 'shop/images/logo.svg' %}" style="height: 40px; width: auto; margin-right: 10px;" alt="ShopEase Logo">
+        <span class="d-none d-sm-inline" style="background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: var(--font-weight-extrabold);">ShopEase</span>
+    </a>
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 2px solid var(--primary); border-radius: var(--radius-md);">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-3" style="font-family: var(--font-primary); font-size: 1.1rem; font-weight: var(--font-weight-medium);">
+        {% block ul %}
 
+        {% endblock %}
+      </ul>
 
-
-
-
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon" style="background-color:#f10736; color:white;"></span>
-
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-<ul class="navbar-nav ml-auto mr-5" style="font-family: var(--font-1); font-size:1.2em;">
-  {% block ul %}
-
-
- {% endblock %}
-
-<button type="button" class="btn btn-primary mx-2 d-flex align-items-center" style="background: var(--gradient-primary); border: none; font-family: var(--font-1); font-weight: 600; color: white; border-radius: 25px; padding: 8px 16px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Your cart items will appear here">
-<a href="/shop/checkout" style="color:white;">
-<svg xmlns="http://www.w3.org/2000/svg" width="25" height="21" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
-<path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-</svg> </a> (<span id="cart" style="text-align:center;">0</span>)
-
-</button>
-</nav>
+      <button type="button" class="btn btn-primary d-flex align-items-center" style="background: var(--gradient-primary); border: none; font-family: var(--font-primary); font-weight: var(--font-weight-semibold); color: white; border-radius: var(--radius-2xl); padding: var(--spacing-sm) var(--spacing-lg); box-shadow: var(--shadow-lg);" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Your cart items will appear here">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-check-fill me-2" viewBox="0 0 16 16">
+          <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+        </svg>
+        <span class="d-none d-sm-inline">Cart</span>
+        <span class="badge bg-light text-primary ms-2" id="cart" style="border-radius: 50%; min-width: 20px;">0</span>
+      </button>
+         </div>
+   </div>
+ </nav>
 <!-- Modal
 <div class="modal fade" id="signupModal" style="position: fixed; margin-top: -1%;" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
 <div class="modal-dialog" role="document">

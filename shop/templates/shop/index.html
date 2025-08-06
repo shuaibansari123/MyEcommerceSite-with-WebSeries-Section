@@ -582,11 +582,13 @@ $('.divpr').on('click', 'button.cart', function() {
     var idstr = this.id.toString();
     if (cart[idstr] != undefined) {
         qty = cart[idstr][0] + 1;
-
+        // Update quantity but keep existing name and price
+        cart[idstr][0] = qty;
     } else {
         qty = 1;
-        name = document.getElementById('namepr'+idstr.slice(2)).innerHTML
-        cart[idstr] = [qty, name];
+        name = document.getElementById('namepr'+idstr.slice(2)).innerHTML;
+        price = parseInt(document.getElementById('pricepr'+idstr.slice(2)).innerHTML.replace('₹', ''));
+        cart[idstr] = [qty, name, price];
 
     }
     updateCart(cart);

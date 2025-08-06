@@ -4,6 +4,61 @@ A professional, full-featured e-commerce web application built with Django, feat
 
 ![ShopEase Banner](https://img.shields.io/badge/ShopEase-E--commerce-blue?style=for-the-badge&logo=django)
 
+## 🚀 Quick Start (New Users)
+
+### Prerequisites
+- Python 3.8+ installed on your system
+- Git installed
+- Basic knowledge of terminal/command prompt
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/shuaibansari123/MyEcommerceSite-with-WebSeries-Section.git
+cd MyEcommerceSite-with-WebSeries-Section
+```
+
+### 2. Run the Setup Script (Automated Setup)
+```bash
+# Make the setup script executable
+chmod +x setup.py
+
+# Run the automated setup
+python3 setup.py
+```
+
+The setup script will automatically:
+- ✅ Install all required dependencies
+- ✅ Set up the database and run migrations
+- ✅ Create a superuser (admin/admin123)
+- ✅ Add sample products
+- ✅ Collect static files
+- ✅ Start the development server
+
+### 3. Access Your Application
+After setup completes, visit:
+- **Main Site**: http://localhost:8000/shop/
+- **Admin Panel**: http://localhost:8000/admin/ (admin/admin123)
+
+### 4. Manual Setup (Alternative)
+If you prefer manual setup:
+
+```bash
+# Install dependencies
+pip install Django Pillow
+
+# Run migrations
+python3 manage.py migrate
+
+# Create superuser
+python3 manage.py createsuperuser
+
+# Collect static files
+python3 manage.py collectstatic
+
+# Start server
+python3 manage.py runserver 0.0.0.0:8000
+```
+
 ## ✨ Features
 
 ### 🎨 **Modern UI/UX Design**
@@ -216,6 +271,65 @@ DATABASES = {
 - **DigitalOcean**: App Platform or Droplets
 - **AWS**: Elastic Beanstalk or EC2
 - **Vercel**: For static deployment with serverless functions
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+#### Port Already in Use
+```bash
+# Kill existing Django processes
+pkill -f "python3 manage.py runserver"
+# Or use a different port
+python3 manage.py runserver 0.0.0.0:8001
+```
+
+#### Static Files Not Loading
+```bash
+# Collect static files
+python3 manage.py collectstatic --noinput
+```
+
+#### Database Issues
+```bash
+# Reset database (WARNING: This will delete all data)
+rm db.sqlite3
+python3 manage.py migrate
+python3 manage.py createsuperuser
+```
+
+#### Missing Dependencies
+```bash
+# Install missing packages
+pip install Django==5.2.4 Pillow
+```
+
+#### Permission Denied (Linux/Mac)
+```bash
+# Make scripts executable
+chmod +x setup.py
+chmod +x docker/entrypoint.sh
+```
+
+### Default Credentials
+- **Admin Username**: admin
+- **Admin Password**: admin123
+- **Admin Email**: admin@shopease.com
+
+### Project Structure
+```
+MyEcommerceSite-with-WebSeries-Section/
+├── shop/                 # Main e-commerce app
+├── blog/                 # Blog functionality  
+├── mac/                  # Django project settings
+├── media/                # User uploaded files
+├── static/               # Static files (CSS, JS, images)
+├── templates/            # HTML templates
+├── docker/               # Docker configuration
+├── setup.py              # Automated setup script
+├── manage.py             # Django management script
+└── requirements.txt      # Python dependencies
+```
 
 ## 🤝 Contributing
 

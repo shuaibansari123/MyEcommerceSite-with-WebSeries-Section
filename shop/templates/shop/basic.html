@@ -32,11 +32,12 @@
 <link media="screen" rel="stylesheet" type="text/css" href="{% static 'shop/css/css/screen.css' %}" />
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{% static 'shop/css/custom.css' %}" />
 
 
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Raleway" rel="stylesheet">
 
 
 
@@ -57,11 +58,18 @@
   }
 
   :root {
-    --pink: rgb(173 173 173);
-    --font-1: 'Fraunces', serif;
-    --mygreen: rgb(50, 51, 1);
-    --purple: rgb(158, 4, 247);
-    --cream :rgb(248 251 250);
+    --primary: #3b82f6;
+    --secondary: #1d4ed8;
+    --accent: #7c3aed;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --dark: #1f2937;
+    --light: #f8fafc;
+    --font-1: 'Inter', sans-serif;
+    --cream: #f1f5f9;
+    --gradient-primary: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    --gradient-accent: linear-gradient(135deg, #7c3aed, #a855f7);
   }
 .navbar-toggler-icon{ background-color:  rgb(191 20 247); padding:4px;}
 
@@ -72,15 +80,16 @@
 
   </head>
   <body style="baackground-color:#fafbfb;">
-    <marquee style="font-weight: 850; background-color:#ff2400; margin-bottom:-7px; font-size:1.1em; font-style:bold; padding:0;  color:white; font-family:var(--font-1)!important; ">In this DIWALI get upto 50% off of all Sales during this month !!! Invite your Friend this link <b> https://shuaibansari.pythonanywhere.com/shop </b></marquee>
+    <div class="alert alert-info text-center mb-0" style="background: var(--gradient-primary); color: white; border: none; font-family: var(--font-1); font-weight: 600; border-radius: 0;">
+      🎉 Special Offer: Get up to 50% off on all products this month! Share with friends: /shop
+    </div>
 
 
 
- <!--  --> <nav class="navbar navbar-expand-lg navbar-dark "   style="background-color:white;  box-shadow: 0px
-
-    8px 20px #ccc4c8 ;  ">
-  <a class="navbar-brand" href="/shop"  style="color:yellow; font-weight: 720; font-size:1.7em; margin-bottom: 6px; font-family: var(--font-1);">
-      <img src="{% static 'shop/pink-logo.jpeg' %}" style="width:60px ; height:60px; background-color:black; ">
+ <nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0 2px 4px rgba(0,0,0,0.1);"">
+  <a class="navbar-brand d-flex align-items-center" href="/shop" style="color: var(--primary); font-weight: 700; font-size:1.5em; font-family: var(--font-1);">
+      <img src="{% static 'shop/pink-logo.jpeg' %}" style="width:50px; height:50px; border-radius: 8px; margin-right: 10px;" alt="Logo">
+      <span>ShopEase</span>
 </a>
 
 
@@ -102,9 +111,8 @@
 
  {% endblock %}
 
-<button type="button" class="btn  mx-2" style="background-color:#ff0643; display:flex;  flex-wrap:nowrap; text-align:center; font-family:var(--font-1); border:1.3px solid #dc0a7f ; font-weight: 900; color:white;  margin:auto; margin-left:10%!important;  justify-content:center; align-items:center; box-shadow: 0 0 8px 0px rgb(249 4 54); " id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus
-sagittis lacus vel augue laoreet rutrum faucibus.">
-<a href="https://shuaibansari.pythonanywhere.com/shop/checkout" style="color:white;">
+<button type="button" class="btn btn-primary mx-2 d-flex align-items-center" style="background: var(--gradient-primary); border: none; font-family: var(--font-1); font-weight: 600; color: white; border-radius: 25px; padding: 8px 16px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Your cart items will appear here">
+<a href="/shop/checkout" style="color:white;">
 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="21" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
 </svg> </a> (<span id="cart" style="text-align:center;">0</span>)
@@ -150,30 +158,29 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 
 
   {% block footer %}
-<section class="testimonials text-center bg-light" style="background-color:#fde9f0!important; margin-top:20px; padding-top:20px; margin-bottom:20px; padding-bottom:20px;">
+<section class="testimonials text-center" style="background: linear-gradient(135deg, var(--light), var(--cream)); margin-top:40px; padding-top:60px; margin-bottom:40px; padding-bottom:60px;">
       <div class="container">
-        <h2 class="mb-5" style="color:#de2444; font-family:var(--font-1);">What people are saying...</h2>
+        <h2 class="mb-5" style="color: var(--dark); font-family: var(--font-1); font-weight: 700;">What our customers say</h2>
         <div class="row">
           <div class="col-lg-4">
             <div class="testimonial-item mx-auto mb-5 mb-lg-0">
               <img class="img-fluid rounded-circle mb-3" src="{% static 'shop/pink7.jpg' %}" alt="">
-              <h5 style="color:#de2444; font-family:var(--font-1);">Margaret E.</h5>
-              <p class="font-weight-light mb-0" style="color:#6b0629; font-family:var(--font-1);" >"This is fantastic! Thanks so much guys!"</p>
+              <h5 style="color: var(--primary); font-family: var(--font-1); font-weight: 600;">Margaret E.</h5>
+              <p class="font-weight-light mb-0" style="color: var(--dark); font-family: var(--font-1);">"This is fantastic! Thanks so much guys!"</p>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="testimonial-item mx-auto mb-5 mb-lg-0">
               <img class="img-fluid rounded-circle mb-3" src="{% static 'shop/pink6.jpg' %}" alt="">
-              <h5 style="color:#de2444; font-family:var(--font-1);">Fred S.</h5>
-              <p class="font-weight-light mb-0" style="color:#6b0629; font-family:var(--font-1);">"Bootstrap is amazing. I've been using it to create lots of super nice
-                landing pages."</p>
+              <h5 style="color: var(--primary); font-family: var(--font-1); font-weight: 600;">Fred S.</h5>
+              <p class="font-weight-light mb-0" style="color: var(--dark); font-family: var(--font-1);">"Amazing products and great service. I've been shopping here for months!"</p>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="testimonial-item mx-auto mb-5 mb-lg-0">
               <img class="img-fluid rounded-circle mb-3" src="{% static 'shop/pink7.jpg' %}" alt="">
-              <h5 style="color:#de2444; font-family:var(--font-1);">Sarah W.</h5>
-              <p class="font-weight-light mb-0" style="color:#6b0629; font-family:var(--font-1);">"Thanks so much for making these free resources available to us!"</p>
+              <h5 style="color: var(--primary); font-family: var(--font-1); font-weight: 600;">Sarah W.</h5>
+              <p class="font-weight-light mb-0" style="color: var(--dark); font-family: var(--font-1);">"Fast shipping and quality products. Highly recommend!"</p>
             </div>
           </div>
         </div>
@@ -182,17 +189,17 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 
 
 
-<footer class="footer bg" style="background-color:rgb(251 3 64); height:40%; padding-bottom:20px; ">
+<footer class="footer" style="background: linear-gradient(135deg, var(--dark), #374151); padding: 60px 0 40px 0;">
         <div class="container" style="margin:15px;" >
           <div class="row" style="">
             <div class="col-lg-6 h-100 text-center text-lg-left my-auto" style="">
               <ul class="list-inline mb-2"  style="padding:30px; ">
                 <li class="list-inline-item">
-                  <a href="https://shuaibansari.pythonanywhere.com/shop/about" style="color:white; font-family:var(--font-1); font-size:1.3em; ">About</a>
+                  <a href="/shop/about" style="color:white; font-family:var(--font-1); font-size:1.3em; ">About</a>
                 </li>
                 <li class="list-inline-item">⋅</li>
                 <li class="list-inline-item">
-                  <a href="https://shuaibansari.pythonanywhere.com/shop/contact" style="color:white; font-family:var(--font-1); font-size:1.3em;">Contact</a>
+                  <a href="/shop/contact" style="color:white; font-family:var(--font-1); font-size:1.3em;">Contact</a>
                 </li>
                 <li class="list-inline-item">⋅</li>
                 <li class="list-inline-item">
@@ -203,8 +210,8 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
                   <a href="#" style="color:white; font-family:var(--font-1); font-size:1.3em;">Privacy Policy</a>
                 </li>
               </ul>
-              <p class="text small mb-4 mb-lg-0" style="color:white; font-size:1.36rem; font-weight: 700; font-family:var(--font-1);">
-                © E-SHOPING-CART Website 2020. <Span style="color:white; font-size:1.16rem; font-weight: 700; font-family:var(--font-1);">All Rights Reserved.</Span>
+              <p class="text small mb-4 mb-lg-0" style="color: #d1d5db; font-size: 1rem; font-weight: 400; font-family: var(--font-1);">
+                © 2024 ShopEase. <span style="color: #d1d5db; font-size: 0.9rem; font-family: var(--font-1);">All Rights Reserved.</span>
               </p>
             </div>
             <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
@@ -286,7 +293,7 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 <div class="col-xs-12 col-sm-6 col-md-3">
 
 <div class="widget no-box">
-<h5 class="widget-title" style="color:#bf0d2a ; font-family:var(--font-1); font-weight: 700;"><a href='https://shuaibansari.pythonanywhere.com/shop/contact/' style="text-decoration:none; color:#bf0d2a;" >Contact Us</a><span></span></h5>
+<h5 class="widget-title" style="color:#bf0d2a ; font-family:var(--font-1); font-weight: 700;"><a href='/shop/contact/' style="text-decoration:none; color:#bf0d2a;" >Contact Us</a><span></span></h5>
 
 <p><a href="mailto:info@domain.com" title="glorythemes"  style="color:white ; font-family:var(--font-1); font-weight: 700;">Shuaibansari@gmail.com</a></p>
 <!--<ul class="social-footer2">

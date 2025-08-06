@@ -302,24 +302,24 @@ margin-right:auto;
 {% block ul %}
 
 <li class="nav-item active m-auto">
-    <a class="nav-link ml-2 mr-2" href="/shop" style="margin:auto; color#dc0a7f; font-family:var(--font-1);font-weight:900;  border-radius:5px;  padding-left:5px; padding-right:5px;  width:fit-content; text-align:center; background-image: linear-gradient(to bottom right ,rgb(249 4 54) , rgb(249 4 54)); margin-bottom:15px; margin-left:39%!important; color:white ;  box-shadow: 0 0 8px 0px rgb(249 4 54); ">Home</a>
+    <a class="nav-link ml-2 mr-2" href="/shop" style="margin:auto; font-family:var(--font-1);font-weight:600; border-radius:25px; padding:8px 16px; background: var(--gradient-primary); color:white; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); text-decoration: none;">Home</a>
   </li>
 
 
   <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/shop/about" style="margin:auto; color:rgb(249 4 54) ;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin:auto;  text-align:center; color:rgb(249 4 54) ; margin-left:41%;">About</a>
+    <a class="nav-link" href="/shop/about" style="margin:auto; color: var(--primary); font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">About</a>
   </li>
 
   <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/shop/tracker" style="margin:auto; color: black;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px; margin-left:25px; margin-right:25px;  width:fit-content; margin-left:41%; color:rgb(249 4 54) ;">Tracker</a>
+    <a class="nav-link" href="/shop/tracker" style="margin:auto; color: var(--primary); font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Tracker</a>
   </li>
 
   <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/blog" style=" margin:auto; color:black;  font-family:var(--font-1);font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin-left:42%; color:rgb(249 4 54) ;">Blog</a>
+    <a class="nav-link" href="/blog" style="margin:auto; color: var(--primary); font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Blog</a>
   </li>
 
   <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/shop/contact" style="margin:auto; color: black; font-family:var(--font-1); font-weight:800;  border-radius:5px; padding-left:5px; padding-right:5px;  width:fit-content; margin-left:41%; color:rgb(249 4 54) ;">Contact </a>
+    <a class="nav-link" href="/shop/contact" style="margin:auto; color: var(--primary); font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Contact</a>
   </li>
 
   {% endblock %}
@@ -333,19 +333,19 @@ margin-right:auto;
 
 
 <!-- For demo purpose-->
-<section class="py-5 text-white" style="height:100vh; margin-bottom:20px;    padding-top:50px; background-image: url('{% static 'shop/pink7.jpg' %}');background-size:cover;background-attachment:fixed; ">
+<section class="py-5 text-white position-relative hero-section">
   <form>
     <div class="container py-4">
       <div class="row"  style="margin:Auto; width:100%;">
 
 
         <div class="col-lg-8 mx-auto text-center">
-          <h1 class="jumbotron-heading">
-              <span id="typed"   style="font-size:1.11em; text-shadow:1px -10px 10px #bd416b; font-family: var(--font-1); color:#b72831 ; font-style:bold;font-weight: 600; font-family:var(--font-1) ; "></span></h1>
+          <h1 class="jumbotron-heading mb-4">
+              <span id="typed" style="font-size:2.5em; color:white; font-family: var(--font-1); font-weight: 700; text-shadow: 0 4px 8px rgba(0,0,0,0.3);"></span></h1>
 
-          <input type="text" id="search1" name="search1" column="4" row="4" class="mt-4" placeholder="Search items " style=" background-color:#f9d9ea;  width:95%; border-radius: 6.5px; height: 50px;  border:2.5px solid white; font-family: var(--font-1); font-weight:800;"><br>
+          <input type="text" id="search1" name="search1" column="4" row="4" class="mt-4 form-control-lg" placeholder="Search for amazing products..." style="background-color:rgba(255,255,255,0.95); width:95%; border-radius: 50px; height: 60px; border:none; font-family: var(--font-1); font-weight:500; box-shadow: 0 8px 32px rgba(0,0,0,0.1); padding: 0 30px;"><br>
      <a href='/shop/search'>
-          <button type="submit" class="row" name="submit1" id="submit1" style="     background-image: linear-gradient(to bottom right , rgb(247 89 121),white, white, rgb(247 89 121)); font-wight:700; font-size:1.5em;font-family: comicsansms; color:red; border:1px solid red; width:auto; height: auto ;margin-top:8px;  padding:2px 28px;  margin:auto; font-size:1.9em; border-radius: 6px;  margin-bottom:2px;  margin-top:15px;font-family:var(--font-1) ;">Search</button></a>
+          <button type="submit" class="btn btn-lg" name="submit1" id="submit1" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color:white; border:2px solid rgba(255,255,255,0.3); padding:12px 40px; margin-top:20px; font-size:1.2em; border-radius: 50px; font-family:var(--font-1); font-weight:600; transition: all 0.3s; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">🔍 Search Products</button></a>
         </div>
 
 
@@ -360,11 +360,8 @@ margin-right:auto;
 
 
 
- <div
-        style="display:flex; font-size:1em; height:35px; font-weight: 700;  align-items: center;
-         font-family:var(--font-1); text-align:center; justify-content: center;
-         margin-top: 4.1vh; color:white; background-image: linear-gradient(to right  , rgb(248, 7, 139),rgb(245, 7, 98),  rgb(236, 236, 69) ,rgb(255, 8, 82),rgb(245, 3, 124));">
-        FREE SHIPING on purchase above Rs 499
+ <div class="alert alert-success text-center py-3 mx-3 rounded-pill" style="background: linear-gradient(135deg, var(--success), #34d399); border: none; color: white; font-family: var(--font-1); font-weight: 600; margin-top: 40px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">
+        🚚 FREE SHIPPING on orders above ₹499 | 📞 24/7 Customer Support
     </div>
 
 
@@ -373,7 +370,7 @@ margin-right:auto;
 
 
     {% for product, range, nSlides in allProds %}
-    <h4 class="my-4" style="color: #f70981 ;margin-left:2%;font-size:1.5em;font-family:var(--font-1);font-weight:700;  ">Flash Sale On<span style="color:white; font-size:2rem; margin:10px;background-color: #f70981;padding:5px;border-radius:7px;""> {{product.0.category.capitalize}} </span>- Recommended Items</h4>
+    <h4 class="my-5 text-center" style="color: var(--dark); margin-left:2%; font-size:2em; font-family:var(--font-1); font-weight:700;">✨ Flash Sale On <span style="color:white; font-size:1.2em; margin:0 10px; background: var(--gradient-primary); padding:8px 20px; border-radius:25px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);">{{product.0.category.capitalize}}</span> - Featured Products</h4>
     <div class="row" data-aos="flip-right">
         <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
             <ul class="carousel-indicators">
@@ -386,19 +383,19 @@ margin-right:auto;
                 <div class="carousel-item active" style="width:110%;">
                     {% for i in product %}
                     <div class="col-xs-3 col-sm-3 col-md-3" style="width:119%; " >
-                        <div class="card align-items-center my-3"  id="b__box" style=" width:20.945rem; margin-left:0px; padding:0px;  border:1px solid rgb(244 142 186);  background-color:#fafcfd;">
-                            <img src='/media/{{i.image}}' class="card-img-top my-0 mx-0" style="width:100%;  margin-right:0; padding:0; margin-left:0px;  border-radius:5px 5px 0 0 ; " alt="...">
+                        <div class="card align-items-center my-3 h-100" id="b__box" style="width:20.945rem; margin-left:0px; padding:0px; border:none; background-color:#ffffff; border-radius:15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s; overflow: hidden;">
+                            <img src='/media/{{i.image}}' class="card-img-top my-0 mx-0" style="width:100%; height:200px; object-fit:cover; margin-right:0; padding:0; margin-left:0px; border-radius:15px 15px 0 0;" alt="{{i.product_name}}">
                             <div class="card-body">
 
                 <Div style="display:flex; flex-direction:row; justify-content: space-around;  ">
-                        <img src="{% static 'shop/star-rating-png.png' %}"  class="card-img-top mx-0" style="margin-bottom: 5px;  margin-top:-3.5px; height: 25px; width:62%; border-radius:5px; margin-left:auto; margin-right:auto; text-align:center; alt="...">
+                        <img src="{% static 'shop/star-rating-png.png' %}"  class="card-img-top mx-0" style="margin-bottom: 5px;  margin-top:-3.5px; height: 25px; width:62%; border-radius:5px; margin-left:auto; margin-right:auto; text-align:center;" alt="Rating">
 </Div>
  <Div style="display:flex; flex-direction:row; justify-content: space-around;  ">
                         <h6 class="card-title" style="color:rgb(150 147 147) ; align-self:flex-end;  margin-bottom: 0.4rem;    align-self:flex-end; margin-right:18px; margin-left:10px;" >
 
                     <span  style="font-size:1.5em; font-weight:650; color:rgb(185 145 34); font-family:var(--font-1); font-weight:800; margin-top:-2px;margin-bottom: 4px; margin-left:5px; ">
                       <!--       <span   style="font-size:0.7em; font-weight:500;  margin-left:-4px; color:rgb(245 183 10); padding-left:7px; margin-right:0px;"  >Rs.</span>-->
-                         <span    id="pricepr{{i.id}}" style="font-size:1em; font-weight:650; color:#fd5a6c; font-family:var(--font-1); font-weight:800; margin-top:-2px;margin-bottom: 4px; margin-right:1px; ">{{i.price}}</span>
+                         <span id="pricepr{{i.id}}" style="font-size:1.5em; font-weight:700; color: var(--primary); font-family: var(--font-1); margin-top:-2px; margin-bottom: 4px; margin-right:1px;">₹{{i.price}}</span>
                     </span>
 
                         </h6>
@@ -406,18 +403,15 @@ margin-right:auto;
 
 
 
-                                <h5 class="card-title" id="namepr{{i.id}}" style="color:#fd5a6c; font-weight: 680 ; font-size:1.35em; font-family:var(--font-1); font-weight:700; text-align:center; margin-bottom:15px;">{{i.product_name.capitalize}}</h5>
+                                <h5 class="card-title" id="namepr{{i.id}}" style="color: var(--dark); font-weight: 600; font-size:1.2em; font-family: var(--font-1); text-align:center; margin-bottom:15px; line-height: 1.4;">{{i.product_name.capitalize}}</h5>
                               <!--  <p class="card-text" style="color:rgb(185 145 34);  text-align:center; margin-bottom:6px; font-family:var(--font-1); font-weight:700;  ">{{i.desc|slice:"0:33"}}...</p>-->
                                <!--<h6 class="card-title" style="color:rgb(245, 6, 117) ; margin-bottom: 0.4rem;" >Price : <span id="pricepr{{i.id}}" style="font-size:1.5em; font-weight:650; color:rgb(245, 6, 117); margin-top:-2px; margin-bottom: 4px;">{{i.price}}</span></h6> -->
                     <div style="text-align:center; display:flex; justify-content:center; align-items:center;" >
                          <span id="divpr{{i.id}}" class="divpr" >
-                                    <button id="pr{{i.id}}" class="btn btn cart ac" style=" font-family:sans-serif ;     background-color:#fd2b77 ;  font-family:var(--font-1); font-weight:700; margin-left:-5px; border-left: 2px solid #fb3054;
-    border-top: 2px solid #fb3054; font-weight:950; color:white; border:2px solid #fd2b77;   box-shadow: 0px 5px 15px 0px rgb(244 83 134); "> Add To Cart
-                                    </button>
+                                    <button id="pr{{i.id}}" class="btn btn cart ac" style="background: var(--gradient-primary); color:white; border:none; border-radius:25px; padding:8px 20px; font-family: var(--font-1); font-weight:600; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); transition: all 0.3s; margin-right: 8px;">🛒 Add To Cart</button>
                          </span>
                                 <a href="/shop/products/{{i.id}}">
-                                    <button id="qv{{i.id}}"  class="btn btn-primary cart qv" style=" font-family:sans-serif; color:#fd2b77;  font-weight:720; background-color:#fafcfd; color:#fd5a6c; border:2px solid #fd2b77; font-style:bold; font-family:var(--font-1); font-weight:900;   ">QuickView
-                                    </button>
+                                    <button id="qv{{i.id}}" class="btn btn-outline-primary cart qv" style="color: var(--primary); background-color:transparent; border:2px solid var(--primary); border-radius:25px; padding:8px 20px; font-family: var(--font-1); font-weight:600; transition: all 0.3s;">👁️ Quick View</button>
                                 </a>
                     </div>
                             </div>
@@ -475,7 +469,7 @@ $('.divpr').on('click', 'button.cart', function() {
 
     } else {
         qty = 1;
-        name = document.getElementById('name'+idstr).innerHTML
+        name = document.getElementById('namepr'+idstr.slice(2)).innerHTML
         cart[idstr] = [qty, name];
 
     }
@@ -492,10 +486,10 @@ function updatePopover(cart) {
     var i = 1;
     for (var item in cart) {
         popStr = popStr + "<b>" + i + "</b>. ";
-        popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 19) + "... Qty: " + cart[item][0] + '<br>';
+        popStr = popStr + document.getElementById('namepr' + item.slice(2)).innerHTML.slice(0, 19) + "... Qty: " + cart[item][0] + '<br>';
         i = i + 1;
     }
-    popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary'  style='color: #fff;background-color: rgb(249 4 54);border-color:rgb(249 4 54);font-family: var(--font-1);font-weight: 800;   ' id ='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id ='clearCart' style='color: #fff;background-color: rgb(249 4 54);border-color: #ff000b;font-family: var(--font-1);font-weight: 650;  ' >Clear Cart</button>     "
+    popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary' style='background: var(--gradient-primary); border: none; color: white; font-family: var(--font-1); font-weight: 600; border-radius: 25px; padding: 10px 20px; margin-right: 10px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);' id='checkout'>🛒 Checkout</button></a> <button class='btn btn-outline-danger' onclick='clearCart()' id='clearCart' style='border: 2px solid var(--danger); color: var(--danger); background: transparent; font-family: var(--font-1); font-weight: 600; border-radius: 25px; padding: 10px 20px;'>🗑️ Clear Cart</button>"
     console.log(popStr);
     document.getElementById('popcart').setAttribute('data-content', popStr);
     $('#popcart').popover('show');
@@ -517,7 +511,7 @@ function updateCart(cart) {
     var sum = 0;
     for (var item in cart) {
         sum = sum + cart[item][0];
-        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn  minus' style='background-color: #fd2b77; color:white; font-weight:800; border:2px solid #fd2b77; '>-</button> <span id='val" + item + "''>" + cart[item][0] + "</span> <button id='plus" + item + "' class='btn plus' style='background-color: #fd2b77; border:2px solid #fd2b77;  color:white; font-weight:800;'> + </button>";
+        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn minus' style='background: var(--danger); color:white; font-weight:600; border:none; border-radius:50%; width:35px; height:35px; margin-right:8px;'>-</button> <span id='val" + item + "' style='font-weight:600; color: var(--dark); margin:0 10px; font-size:1.1em;'>" + cart[item][0] + "</span> <button id='plus" + item + "' class='btn plus' style='background: var(--success); border:none; border-radius:50%; width:35px; height:35px; color:white; font-weight:600; margin-left:8px;'>+</button>";
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     document.getElementById('cart').innerHTML = sum;
@@ -541,7 +535,10 @@ $('.divpr').on("click", "button.plus", function() {
 
 
 
-document.getElemenById('popcart').click().click()
+// Auto-hide popover on load
+setTimeout(function() {
+    $('#popcart').popover('hide');
+}, 100);
 
 
 

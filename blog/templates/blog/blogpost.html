@@ -1,23 +1,29 @@
 {% extends 'blog/basic.html' %}
 
 {% block ul %}
-<li class="nav-item active">
-    <a class="nav-link" href="/shop" style="color:white; font-family:var(--font-1); font-weight:550;  margin-left:20px; margin-right:20px;">Home <span class="sr-only">(current)</span></a>
-  </li>
-<li class="nav-item">
-    <a class="nav-link" href="/shop/about" style="color:white; font-family:var(--font-1); font-weight:550;  margin-left:20px; margin-right:20px;">About </a>
-  </li>
+<li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop" style="color: white !important; margin:auto; font-family:'Inter', sans-serif;font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Home</a>
+</li>
 
-  <li class="nav-item">
-    <a class="nav-link" href="/shop" style="color:white; font-family:var(--font-1); font-weight:650;  margin-left:20px; margin-right:20px; font-size:1.4em;  ">GoToShop</a>
-  </li>
+<li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/about" style="color: white !important; margin:auto; font-family:'Inter', sans-serif;font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">About</a>
+</li>
 
-  <li class="nav-item">
-    <a class="nav-link" href="/blog" style="color:white; font-family:var(--font-1); font-weight:650;  margin-left:20px;  color:#f8385e; font-size:1.2em; margin-right:180px; padding:7px ; border-radius:7px; ">Blog</a>
-  </li>
+<li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/tracker" style="color: white !important; margin:auto; font-family:'Inter', sans-serif;font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Tracker</a>
+</li>
 
+<li class="nav-item active ml-2 mr-2">
+    <a class="nav-link" href="/blog" style="margin:auto; font-family:'Inter', sans-serif;font-weight:600; border-radius:25px; padding:8px 16px; background: var(--gradient-primary); color:white; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); text-decoration: none;">
+        <i class="fas fa-blog me-1"></i>Blog
+    </a>
+</li>
 
-  {% endblock %}
+<li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop/contact" style="color: white !important; margin:auto; font-family:'Inter', sans-serif;font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Contact</a>
+</li>
+
+{% endblock %}
 {% block body %}
 <div class="container">
     <div class="row mt-4">

@@ -1,55 +1,233 @@
 {% extends 'shop/basic.html' %}
-{% block title %} Contact Us {% endblock %}
-
+{% load static %}
+{% block title %} Contact Us - ShopEase {% endblock %}
 
 {% block ul %}
-
-<li class="nav-item active">
-  <a class="nav-link ml-2 mr-2" href="/shop" style="color:var(--pink); font-family: 1.8em;  font-family:var(--font-1);font-weight:1000;">Home <span class="sr-only">(current)</span></a>
-</li>
-<li class="nav-item">
-  <a class="nav-link ml-2 mr-2" href="/shop/about" style="color:var(--pink);  font-family:var(--font-1); font-weight:900;">About Us</a>
+<li class="nav-item ml-2 mr-2">
+    <a class="nav-link" href="/shop" style="color: white !important; margin:auto; font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Home</a>
 </li>
 
 <li class="nav-item ml-2 mr-2">
-  <a class="nav-link" href="/shop/tracker" style="color:var(--pink);  font-family:var(--font-1);font-weight:800;">Tracker</a>
+    <a class="nav-link" href="/shop/about" style="color: white !important; margin:auto; font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">About</a>
 </li>
 
 <li class="nav-item ml-2 mr-2">
-  <a class="nav-link" href="/blog" style="color:var(--pink);  font-family:var(--font-1);font-weight:800;">Blog</a>
+    <a class="nav-link" href="/shop/tracker" style="color: white !important; margin:auto; font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Tracker</a>
 </li>
 
 <li class="nav-item ml-2 mr-2">
-  <a class="nav-link" href="/shop/contact" style="color:var(--pink); font-family:var(--font-1); font-weight:800;  background-color: var(--pink); border-radius:5px; padding-left:5px; padding-right:5px;  color:rgb(250, 240, 181); border-radius:5px; padding-left:5px; padding-right:5px; ">Contact Us</a>
+    <a class="nav-link" href="/blog" style="color: white !important; margin:auto; font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Blog</a>
 </li>
 
-
-  {% endblock %}
+<li class="nav-item active ml-2 mr-2">
+    <a class="nav-link" href="/shop/contact" style="margin:auto; font-family:var(--font-1);font-weight:600; border-radius:25px; padding:8px 16px; background: var(--gradient-primary); color:white; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); text-decoration: none;">Contact</a>
+</li>
+{% endblock %}
 
 {% block body %}
- <div class="container my-3">
-     <h3>Contact Us</h3>
-     <form action="/shop/contact/" method="post">{% csrf_token %}
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
-  </div>
-          <div class="form-group">
-    <label for="name">Email</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
-  </div>
-          <div class="form-group">
-    <label for="name">Phone</label>
-    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
-  </div>
-          <div class="form-group">
-   <div class="form-group">
-    <label for="desc">How May We Help You ?</label>
-    <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
-  </div>
-  <button type="submit" class="btn btn-success">Submit</button>
+<!-- Contact Hero Section -->
+<section class="contact-hero" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(124, 58, 237, 0.8)), url('{% static 'shop/images/hero.png' %}'); background-size: cover; background-position: center; min-height: 60vh; display: flex; align-items: center; position: relative;">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <div class="hero-content" style="animation: fadeInUp 1s ease-out;">
+                    <h1 class="display-3 fw-bold text-white mb-4" style="font-family: 'Inter', sans-serif; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">
+                        <i class="fas fa-envelope me-3" style="color: #fbbf24;"></i>
+                        Contact Us
+                    </h1>
+                    <p class="lead text-white mb-4" style="font-family: 'Inter', sans-serif; opacity: 0.95; font-size: 1.3rem;">
+                        Get in touch with our friendly team - we're here to help you 24/7
+                    </p>
+                    <div class="hero-stats d-flex justify-content-center gap-4 flex-wrap">
+                        <div class="stat-item text-center">
+                            <div class="stat-number text-white" style="font-size: 2rem; font-weight: 700;">&lt; 1hr</div>
+                            <div class="stat-label text-white" style="opacity: 0.8;">Response Time</div>
+                        </div>
+                        <div class="stat-item text-center">
+                            <div class="stat-number text-white" style="font-size: 2rem; font-weight: 700;">24/7</div>
+                            <div class="stat-label text-white" style="opacity: 0.8;">Support</div>
+                        </div>
+                        <div class="stat-item text-center">
+                            <div class="stat-number text-white" style="font-size: 2rem; font-weight: 700;">100%</div>
+                            <div class="stat-label text-white" style="opacity: 0.8;">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-  {% endblock %}
+<!-- Main Content -->
+<div class="container py-5" style="background: linear-gradient(135deg, #f1f5f9, #e2e8f0); min-height: 100vh; font-family: 'Inter', sans-serif;">
+    
+    <div class="row">
+        <!-- Contact Form -->
+        <div class="col-lg-8 mb-5">
+            <div class="card" style="border: none; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); background: white; border-left: 4px solid #8b5cf6;">
+                <div class="card-header" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; border-radius: 20px 20px 0 0; padding: 25px;">
+                    <h3 class="mb-0" style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem;">
+                        <span class="badge me-3" style="background: rgba(255,255,255,0.2); color: white; font-size: 1rem; padding: 8px 12px; border-radius: 12px;">✉️</span>
+                        Send us a Message
+                    </h3>
+                    <p class="mb-0 mt-2" style="opacity: 0.9; font-size: 0.95rem;">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                </div>
+                <div class="card-body p-4">
+                    {% if thank %}
+                    <div class="alert" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0); border: 1px solid #22c55e; border-radius: 12px; color: #166534; padding: 20px; margin-bottom: 30px;">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle me-3" style="font-size: 2rem; color: #22c55e;"></i>
+                            <div>
+                                <h5 style="color: #166534; font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 0.5rem;">Thank You!</h5>
+                                <p style="margin: 0; font-family: 'Inter', sans-serif;">Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    <form action="/shop/contact/" method="post">{% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="name" class="form-label" style="font-weight: 700; font-family: 'Inter', sans-serif; color: #1e293b; font-size: 0.95rem;">
+                                    <i class="fas fa-user me-2" style="color: #8b5cf6;"></i>Full Name
+                                </label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" 
+                                       style="border-radius: 12px; border: 2px solid #cbd5e1; padding: 14px 18px; font-family: 'Inter', sans-serif; transition: all 0.3s; background: #ffffff; color: #1e293b; font-weight: 500;" 
+                                       onfocus="this.style.border='2px solid #8b5cf6'; this.style.boxShadow='0 0 0 3px rgba(139, 92, 246, 0.1)';" 
+                                       onblur="this.style.border='2px solid #cbd5e1'; this.style.boxShadow='none';" required>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="email" class="form-label" style="font-weight: 700; font-family: 'Inter', sans-serif; color: #1e293b; font-size: 0.95rem;">
+                                    <i class="fas fa-envelope me-2" style="color: #8b5cf6;"></i>Email Address
+                                </label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com"
+                                       style="border-radius: 12px; border: 2px solid #cbd5e1; padding: 14px 18px; font-family: 'Inter', sans-serif; transition: all 0.3s; background: #ffffff; color: #1e293b; font-weight: 500;"
+                                       onfocus="this.style.border='2px solid #8b5cf6'; this.style.boxShadow='0 0 0 3px rgba(139, 92, 246, 0.1)';" 
+                                       onblur="this.style.border='2px solid #cbd5e1'; this.style.boxShadow='none';" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="phone" class="form-label" style="font-weight: 700; font-family: 'Inter', sans-serif; color: #1e293b; font-size: 0.95rem;">
+                                <i class="fas fa-phone me-2" style="color: #8b5cf6;"></i>Phone Number
+                            </label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number"
+                                   style="border-radius: 12px; border: 2px solid #cbd5e1; padding: 14px 18px; font-family: 'Inter', sans-serif; transition: all 0.3s; background: #ffffff; color: #1e293b; font-weight: 500;"
+                                   onfocus="this.style.border='2px solid #8b5cf6'; this.style.boxShadow='0 0 0 3px rgba(139, 92, 246, 0.1)';" 
+                                   onblur="this.style.border='2px solid #cbd5e1'; this.style.boxShadow='none';">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="desc" class="form-label" style="font-weight: 700; font-family: 'Inter', sans-serif; color: #1e293b; font-size: 0.95rem;">
+                                <i class="fas fa-comment me-2" style="color: #8b5cf6;"></i>How May We Help You?
+                            </label>
+                            <textarea class="form-control" id="desc" name="desc" rows="5" placeholder="Tell us about your inquiry..."
+                                      style="border-radius: 12px; border: 2px solid #cbd5e1; padding: 14px 18px; font-family: 'Inter', sans-serif; transition: all 0.3s; background: #ffffff; color: #1e293b; font-weight: 500; resize: vertical;"
+                                      onfocus="this.style.border='2px solid #8b5cf6'; this.style.boxShadow='0 0 0 3px rgba(139, 92, 246, 0.1)';" 
+                                      onblur="this.style.border='2px solid #cbd5e1'; this.style.boxShadow='none';" required></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-lg px-5 py-3" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; border: none; border-radius: 25px; font-family: 'Inter', sans-serif; font-weight: 700; box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3); transition: all 0.3s; position: relative; overflow: hidden;"
+                                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 35px rgba(139, 92, 246, 0.4)';"
+                                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(139, 92, 246, 0.3)';">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="col-lg-4">
+            <!-- Contact Info Card -->
+            <div class="card mb-4" style="border: none; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); background: white; border-left: 4px solid #3b82f6;">
+                <div class="card-header" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border-radius: 20px 20px 0 0; padding: 20px;">
+                    <h4 class="mb-0" style="font-family: 'Inter', sans-serif; font-weight: 700;">
+                        <i class="fas fa-info-circle me-2"></i>Contact Information
+                    </h4>
+                </div>
+                <div class="card-body p-4">
+                    <div class="contact-item mb-4" style="display: flex; align-items: center;">
+                        <div class="contact-icon me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6, #2563eb); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-map-marker-alt" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h6 style="color: #1e293b; font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 0.25rem;">Address</h6>
+                            <p style="color: #64748b; font-family: 'Inter', sans-serif; margin: 0; font-size: 0.9rem;">123 E-commerce St, Digital City, World</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item mb-4" style="display: flex; align-items: center;">
+                        <div class="contact-icon me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-phone" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h6 style="color: #1e293b; font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 0.25rem;">Phone</h6>
+                            <p style="color: #64748b; font-family: 'Inter', sans-serif; margin: 0; font-size: 0.9rem;">+1 (123) 456-7890</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item mb-4" style="display: flex; align-items: center;">
+                        <div class="contact-icon me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-envelope" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h6 style="color: #1e293b; font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 0.25rem;">Email</h6>
+                            <p style="color: #64748b; font-family: 'Inter', sans-serif; margin: 0; font-size: 0.9rem;">support@shopease.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item" style="display: flex; align-items: center;">
+                        <div class="contact-icon me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-clock" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h6 style="color: #1e293b; font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 0.25rem;">Business Hours</h6>
+                            <p style="color: #64748b; font-family: 'Inter', sans-serif; margin: 0; font-size: 0.9rem;">Mon - Fri: 9 AM - 6 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Card -->
+            <div class="card" style="border: none; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); background: white; border-left: 4px solid #8b5cf6;">
+                <div class="card-header" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; border-radius: 20px 20px 0 0; padding: 20px;">
+                    <h4 class="mb-0" style="font-family: 'Inter', sans-serif; font-weight: 700;">
+                        <i class="fas fa-share-alt me-2"></i>Follow Us
+                    </h4>
+                </div>
+                <div class="card-body p-4">
+                    <p style="color: #64748b; font-family: 'Inter', sans-serif; margin-bottom: 1.5rem;">Connect with us on social media for updates and support.</p>
+                    <div class="social-links d-flex gap-3 justify-content-center">
+                        <a href="#" style="width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6, #2563eb); border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s;"
+                           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(59, 130, 246, 0.3)';"
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            <i class="fab fa-facebook-f" style="color: white; font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" style="width: 50px; height: 50px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s;"
+                           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(16, 185, 129, 0.3)';"
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            <i class="fab fa-twitter" style="color: white; font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" style="width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s;"
+                           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(245, 158, 11, 0.3)';"
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            <i class="fab fa-instagram" style="color: white; font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" style="width: 50px; height: 50px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s;"
+                           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(239, 68, 68, 0.3)';"
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            <i class="fab fa-linkedin-in" style="color: white; font-size: 1.2rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
   {% block js%}
   
   {% if thank %}

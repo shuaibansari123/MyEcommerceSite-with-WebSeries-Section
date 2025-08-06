@@ -307,19 +307,19 @@ margin-right:auto;
 
 
   <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/shop/about" style=" color: white !important; margin:auto; color: var(--primary); font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">About</a>
+    <a class="nav-link" href="/shop/about" style="color: white !important; margin:auto; font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">About</a>
   </li>
 
   <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/shop/tracker" style=" color: white !important; margin:auto; color: var(--primary); font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Tracker</a>
+    <a class="nav-link" href="/shop/tracker" style="color: white !important; margin:auto; font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Tracker</a>
   </li>
 
   <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/blog" style=" color: white !important; margin:auto; color: var(--primary); font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Blog</a>
+    <a class="nav-link" href="/blog" style="color: white !important; margin:auto; font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Blog</a>
   </li>
 
   <li class="nav-item ml-2 mr-2">
-    <a class="nav-link" href="/shop/contact" style=" color: white !important; margin:auto; color: var(--primary); font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Contact</a>
+    <a class="nav-link" href="/shop/contact" style="color: white !important; margin:auto; font-family:var(--font-1);font-weight:600; border-radius:20px; padding:8px 16px; text-decoration: none; transition: all 0.3s;">Contact</a>
   </li>
 
   {% endblock %}
@@ -414,7 +414,7 @@ margin-right:auto;
       </div>
     </div>
   </div>
-</section>
+  </section>
 
 
 
@@ -622,8 +622,8 @@ function updatePopover(cart) {
     } else {
         // Cart items with modern card design
         popStr = popStr + "<div style='max-height: 300px; overflow-y: auto; margin-bottom: 15px;'>";
-        var i = 1;
-        for (var item in cart) {
+    var i = 1;
+    for (var item in cart) {
             var itemName = document.getElementById('namepr' + item.slice(2)).innerHTML;
             var itemPrice = document.getElementById('pricepr' + item.slice(2)).innerHTML.replace('₹', '');
             var quantity = cart[item][0];
@@ -642,7 +642,7 @@ function updatePopover(cart) {
             popStr = popStr + "</div></div>";
             popStr = popStr + "<div style='color: #6b7280; font-size: 0.8em; margin-left: 10px;'>₹" + itemPrice + " each</div>";
             popStr = popStr + "</div></div>";
-            i = i + 1;
+        i = i + 1;
         }
         popStr = popStr + "</div>";
         
@@ -690,6 +690,8 @@ function updateCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
     document.getElementById('cart').innerHTML = sum;
     console.log(cart);
+    // Force popover refresh
+    $('#popcart').popover('dispose');
     updatePopover(cart);
 }
 // If plus or minus button is clicked, change the cart as well as the display value
@@ -697,14 +699,27 @@ $('.divpr').on("click", "button.minus", function() {
     a = this.id.slice(7, );
     cart['pr' + a][0] = cart['pr' + a][0] - 1;
     cart['pr' + a][0] = Math.max(0, cart['pr' + a][0]);
+    if (cart['pr' + a][0] == 0){
+        document.getElementById('divpr' + a).innerHTML = '<button id="pr'+a+'" class="btn btn-primary cart">Add to Cart</button>';
+        delete cart['pr'+a];
+    } else {
     document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+    }
     updateCart(cart);
+    // Force immediate popover update
+    $('#popcart').popover('dispose');
+    updatePopover(cart);
+    $('#popcart').popover('show');
 });
 $('.divpr').on("click", "button.plus", function() {
     a = this.id.slice(6, );
     cart['pr' + a][0] = cart['pr' + a][0] + 1;
     document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
     updateCart(cart);
+    // Force immediate popover update
+    $('#popcart').popover('dispose');
+    updatePopover(cart);
+    $('#popcart').popover('show');
 });
 
 

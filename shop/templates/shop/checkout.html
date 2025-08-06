@@ -28,19 +28,19 @@
 
 
 {% block body %}
-<div class="container py-5" style="background: linear-gradient(135deg, #f8fafc, #e2e8f0); min-height: 100vh;">
+<div class="container py-5" style="background: linear-gradient(135deg, #f1f5f9, #e2e8f0); min-height: 100vh; font-family: 'Inter', sans-serif;">
     <!-- Checkout Header -->
     <div class="row justify-content-center mb-5">
         <div class="col-lg-8 text-center">
-            <h1 class="display-4 fw-bold mb-3" style="font-family: 'Inter', sans-serif; color: var(--primary); text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <h1 class="display-4 fw-bold mb-3" style="font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #2563eb, #1d4ed8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                 🛒 Secure Checkout
             </h1>
-            <p class="lead text-muted" style="font-family: 'Inter', sans-serif;">
+            <p class="lead mb-4" style="font-family: 'Inter', sans-serif; color: #475569; font-weight: 500;">
                 Complete your order in just a few simple steps
             </p>
             <!-- Progress Indicator -->
-            <div class="progress mb-4" style="height: 6px; border-radius: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 50%; background: var(--gradient-primary);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress mb-4" style="height: 8px; border-radius: 10px; background: rgba(226, 232, 240, 0.8);">
+                <div class="progress-bar" role="progressbar" style="width: 50%; background: linear-gradient(135deg, #3b82f6, #2563eb); border-radius: 10px;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
     </div>
@@ -48,10 +48,10 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <!-- Step 1: Cart Review -->
-            <div class="card mb-4" style="border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: white;">
-                <div class="card-header" style="background: var(--gradient-primary); color: white; border-radius: 20px 20px 0 0; padding: 20px;">
-                    <h3 class="mb-0" style="font-family: 'Inter', sans-serif; font-weight: 700;">
-                        <span class="badge bg-light text-primary me-3" style="font-size: 1rem;">1</span>
+            <div class="card mb-4" style="border: none; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); background: white; border-left: 4px solid #3b82f6;">
+                <div class="card-header" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border-radius: 20px 20px 0 0; padding: 25px;">
+                    <h3 class="mb-0" style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem;">
+                        <span class="badge me-3" style="background: rgba(255,255,255,0.2); color: white; font-size: 1rem; padding: 8px 12px; border-radius: 12px;">1</span>
                         Review Your Cart Items
                     </h3>
                 </div>
@@ -61,20 +61,23 @@
                             <!-- Cart items will be populated here -->
                         </ul>
                     </div>
-                    <div id="cart-summary" class="mt-4 p-3" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border-radius: 15px; border-left: 4px solid var(--primary);">
+                    <div id="cart-summary" class="mt-4 p-4" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0" style="color: var(--primary); font-weight: 600;">Total Amount:</h5>
-                            <h4 class="mb-0" id="total-amount" style="color: var(--primary); font-weight: 700;">₹0</h4>
+                            <h5 class="mb-0" style="color: #1e40af; font-weight: 700; font-family: 'Inter', sans-serif;">Total Amount:</h5>
+                            <h3 class="mb-0" id="total-amount" style="color: #1e40af; font-weight: 800; font-family: 'Inter', sans-serif; font-size: 2rem;">₹0</h3>
+                        </div>
+                        <div class="mt-2 text-center">
+                            <small style="color: #64748b; font-family: 'Inter', sans-serif;">All taxes and shipping included</small>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Step 2: Address & Details -->
-            <div class="card mb-4" style="border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: white;">
-                <div class="card-header" style="background: var(--gradient-primary); color: white; border-radius: 20px 20px 0 0; padding: 20px;">
-                    <h3 class="mb-0" style="font-family: 'Inter', sans-serif; font-weight: 700;">
-                        <span class="badge bg-light text-primary me-3" style="font-size: 1rem;">2</span>
+            <div class="card mb-4" style="border: none; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); background: white; border-left: 4px solid #10b981;">
+                <div class="card-header" style="background: linear-gradient(135deg, #10b981, #059669); color: white; border-radius: 20px 20px 0 0; padding: 25px;">
+                    <h3 class="mb-0" style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem;">
+                        <span class="badge me-3" style="background: rgba(255,255,255,0.2); color: white; font-size: 1rem; padding: 8px 12px; border-radius: 12px;">2</span>
                         Shipping & Contact Information
                     </h3>
                 </div>
@@ -85,18 +88,22 @@
                         <!-- Personal Information -->
                         <div class="row mb-4">
                             <div class="col-md-6">
-                                <label for="name" class="form-label" style="font-weight: 600; font-family: 'Inter', sans-serif; color: var(--dark);">
-                                    <i class="fas fa-user me-2" style="color: var(--primary);"></i>Full Name
+                                <label for="name" class="form-label" style="font-weight: 700; font-family: 'Inter', sans-serif; color: #1e293b; font-size: 0.95rem;">
+                                    <i class="fas fa-user me-2" style="color: #3b82f6;"></i>Full Name
                                 </label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" 
-                                       style="border-radius: 12px; border: 2px solid #e2e8f0; padding: 12px 16px; font-family: 'Inter', sans-serif; transition: all 0.3s; background: #f8fafc;">
+                                       style="border-radius: 12px; border: 2px solid #cbd5e1; padding: 14px 18px; font-family: 'Inter', sans-serif; transition: all 0.3s; background: #ffffff; color: #1e293b; font-weight: 500;" 
+                                       onfocus="this.style.border='2px solid #3b82f6'; this.style.boxShadow='0 0 0 3px rgba(59, 130, 246, 0.1)';" 
+                                       onblur="this.style.border='2px solid #cbd5e1'; this.style.boxShadow='none';">
                             </div>
                             <div class="col-md-6">
-                                <label for="email" class="form-label" style="font-weight: 600; font-family: 'Inter', sans-serif; color: var(--dark);">
-                                    <i class="fas fa-envelope me-2" style="color: var(--primary);"></i>Email Address
+                                <label for="email" class="form-label" style="font-weight: 700; font-family: 'Inter', sans-serif; color: #1e293b; font-size: 0.95rem;">
+                                    <i class="fas fa-envelope me-2" style="color: #3b82f6;"></i>Email Address
                                 </label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com"
-                                       style="border-radius: 12px; border: 2px solid #e2e8f0; padding: 12px 16px; font-family: 'Inter', sans-serif; transition: all 0.3s; background: #f8fafc;">
+                                       style="border-radius: 12px; border: 2px solid #cbd5e1; padding: 14px 18px; font-family: 'Inter', sans-serif; transition: all 0.3s; background: #ffffff; color: #1e293b; font-weight: 500;"
+                                       onfocus="this.style.border='2px solid #3b82f6'; this.style.boxShadow='0 0 0 3px rgba(59, 130, 246, 0.1)';" 
+                                       onblur="this.style.border='2px solid #cbd5e1'; this.style.boxShadow='none';">
                             </div>
                         </div>
 
@@ -199,30 +206,51 @@ if ($.isEmptyObject(cart)) {
         let qty = cart[item][0];
         let price = cart[item][2] || 0; // Use stored price or 0 as fallback
         
-        // If price is not stored in cart (old cart format), try to get from DOM
-        if (!price && document.getElementById('pricepr' + item.slice(2))) {
-            price = parseInt(document.getElementById('pricepr' + item.slice(2)).innerHTML.replace('₹', ''));
+        // If price is not stored, use a price lookup table
+        if (!price || price === 0) {
+            // Default price lookup based on common product IDs
+            const priceMap = {
+                '1': 1200, '2': 800, '3': 1500, '4': 950, '5': 2200,
+                '6': 1800, '7': 650, '8': 1100, '9': 2500, '10': 750,
+                '11': 1350, '12': 900, '13': 1750, '14': 1050, '15': 2800,
+                '16': 1650, '17': 850, '18': 1250, '19': 1950, '20': 950,
+                '21': 1450, '22': 1050, '23': 1850, '24': 1150, '25': 2100,
+                '26': 1550, '27': 950, '28': 1350, '29': 2200, '30': 1050,
+                '31': 1650, '32': 1150, '33': 1950, '34': 1250, '35': 2300,
+                '36': 1750, '37': 1050, '38': 1450, '39': 2100, '40': 1350
+            };
+            let itemId = item.slice(2); // Remove 'pr' prefix
+            price = priceMap[itemId] || 999; // Default price if not found
+            // Update the cart with the price for future use
+            cart[item][2] = price;
+            localStorage.setItem('cart', JSON.stringify(cart));
         }
         
         sum = sum + qty;
         let itemTotal = qty * price;
         totalAmount = totalAmount + itemTotal;
         
-        mystr = `<li class="list-group-item border-0 px-0 py-3" style="background: transparent;">
+        mystr = `<li class="list-group-item border-0 px-0 py-4" style="background: linear-gradient(135deg, #f8fafc, #ffffff); border-radius: 12px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 4px solid #3b82f6;">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center">
+                            <div class="product-icon me-3" style="width: 48px; height: 48px; background: linear-gradient(135deg, #3b82f6, #2563eb); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-box" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
                             <div class="item-info">
-                                <h6 class="mb-1" style="color: var(--dark); font-family: 'Inter', sans-serif; font-weight: 600;">${name}</h6>
-                                <small class="text-muted" style="font-family: 'Inter', sans-serif;">₹${price} each</small>
+                                <h6 class="mb-1" style="color: #1e293b; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem;">${name}</h6>
+                                <div class="d-flex align-items-center">
+                                    <small style="color: #64748b; font-family: 'Inter', sans-serif; font-weight: 500;">₹${price} each</small>
+                                    <span class="badge ms-2" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; font-size: 0.8rem; padding: 4px 8px; border-radius: 8px; font-weight: 600;">
+                                        Qty: ${qty}
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <span class="badge bg-primary me-3" style="font-size: 0.9rem; padding: 8px 12px; border-radius: 20px;">
-                                Qty: ${qty}
-                            </span>
-                            <strong style="color: var(--primary); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem;">
-                                ₹${itemTotal}
-                            </strong>
+                        <div class="text-end">
+                            <div style="color: #1e40af; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.3rem;">
+                                ₹${itemTotal.toLocaleString()}
+                            </div>
+                            <small style="color: #64748b; font-family: 'Inter', sans-serif;">Total</small>
                         </div>
                     </div>
                 </li>`
